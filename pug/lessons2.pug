@@ -1,0 +1,66 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Обучение Для парикмахеров',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Обучение Для парикмахеров
+      .heading-block
+        h1.h.h4 Обучение Для парикмахеров
+      .content-block-with-sidebar.row
+        .col-12.col-sm-4
+          form.lessons-filter-form
+            .input-row
+              label Месяц
+              select.style1
+                option(value="") Январь 2019
+                option(value="") Январь 2019
+                option(value="") Январь 2019
+            .input-row
+              label Город
+              select.style1
+                option(value="") Ярославль
+                option(value="") Ярославль
+                option(value="") Ярославль
+        .col
+          .lesson-in-row-t2-items
+            -
+              var array = [
+                {t: 'Визит в салоны красоты города ведущего тренера стилиста Cocochoco'},
+                {t: 'Мастерство свадебной прически от мастера Виктории Вагановой'},
+              ]
+            each i, index in array
+              .lesson-item
+                .img(style="background-image: url(images/course-item"+(index+1)+".jpg)")
+                .content
+                  .top
+                    .title
+                      a(href="#")= i.t
+                    .right Ярославль
+                      br
+                      | 20 января
+                  .bottom
+                    .label Справки по телефону
+                    .line
+                    .phone 8 910 113-72-20
+                
+
+
+
+
+
+
+
+
+
+
+

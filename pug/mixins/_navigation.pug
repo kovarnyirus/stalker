@@ -1,0 +1,51 @@
+mixin navigation_item(name, href, slug, current)
+  if slug == current
+    li.current&attributes(attributes)
+      a(href=href)
+        span #{name}
+      if block
+        block
+  else 
+    li&attributes(attributes)
+      a(href=href)
+        span #{name}
+      if block
+        block
+
+mixin navigation(current)
+  ul.menu
+    +navigation_item('О Klatz', '#', 'home', current)
+    +navigation_item('Продукция', '#', 'products', current)(class='menu-item-has-children')
+      ul.submenu
+        -
+          var array = [
+            {h: 'Lifestyle', l: '#', sub: [
+              { h: 'Бережное отбеливание', l: '#', c: true },
+              { h: 'Комплексный уход', l: '#' },
+              { h: 'Свежее дыхание', l: '#' },
+              { h: 'Активная защита', l: '#' },
+            ]},
+            {h: 'Health', l: '#', sub: [
+              { h: 'Здоровье дёсен', l: '#' },
+              { h: 'Реминерализация эмали', l: '#' },
+              { h: 'Сенситив', l: '#' },
+              { h: 'Целебные травы', l: '#' },
+            ]},
+            {h: 'Brutal Only', l: '#', sub: [
+              { h: 'Супер-мята', l: '#' },
+              { h: 'Дикий можжевельник', l: '#' },
+            ]}
+          ]
+        each i in array
+          li
+            a(href=i.l)
+              span= i.h
+            ul.submenu
+              each sub in i.sub
+                - var css_class = '';
+                if sub.c
+                  - css_class = 'current';
+                li(class=css_class)
+                  a(href=sub.l)
+                    span= sub.h
+    +navigation_item('Контакты', '#', 'contacts', current)

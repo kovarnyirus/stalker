@@ -1,0 +1,42 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Новости',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Новости
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Новости
+        .post-date 15.05.2019
+      .post-content
+        .row
+          .col
+            img(src="images/img-post1.jpg")
+          .col-12.col-sm-5.col-md-4
+            p Если вы уже являетесь нашим клиентом, то вам на эл. почту будет отправлен логин и пароль для входа в личный кабинет.
+            p Если Вы новый клиент, при заполнении заявки на регистрацию, в поле краткий комментарий укажите интересующие Вас марки. В течение рабочего дня, с Вами свяжется наш оператор для обсуждения условий сотрудничества.
+        .free-space(style="height: 70px;")
+        .row
+          .col
+            img(src="images/img-post2.jpg")
+          .col-12.col-sm-5.col-md-4
+            p Если вы уже являетесь нашим клиентом, то вам на эл. почту будет отправлен логин и пароль для входа в личный кабинет.
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+extends templates/layout.pug
+
+block vars
+	-
+		var
+		title = 'Главная',
+		logged = true;
+
+block content
+	main.main-container
+		.container
+			.slider-block.swiper-container
+				.swiper-pagination
+				.swiper-wrapper
+					-
+						var array = [
+						{i: 'slide'},
+						{i: 'bg2'},
+						]
+					each i in array
+						.swiper-slide(style="background-image: url(images/" + i.i + ".jpg)")
+
+			// Акции
+			.heading-block.with-button
+				h4.h Акции и скидки
+				a.button-style2(href="#")
+					span Все акции
+			.sale-carousel
+				.prev.base-icon-prev
+				.next.base-icon-next
+				.swiper-container
+					.swiper-wrapper
+						-
+							var array = [
+							{i: 'sale1', h: 'ESTEL -50%'},
+							{i: 'sale2', h: 'ESTEL -20%'},
+							{i: 'sale3', h: 'ESTEL -520%'},
+							]
+						each i in array
+							.swiper-slide
+								.sale-item(style="background-image: url(images/" + i.i + ".jpg)")
+									.content
+										.title= i.h
+										.desc Описание акции<br>в пару строк для наглядности<br>возможные условия
+										.button
+											a.button-style2(href="#")
+												span Подробнее
+			//обучение
+			.heading-block.with-button
+				h4.h Обучение для визажистов
+				a.button-style2(href="#")
+					span Все акции
+			.lesson-in-row-t2-items
+				.row
+					-
+						var array = [
+						{t: 'Визит в салоны красоты города ведущего тренера стилиста Cocochoco'},
+						{t: 'Мастерство свадебной прически от мастера Виктории Вагановой'},
+						]
+					each i, index in array
+						.col-6
+							.lesson-item
+								.img(style="background-image: url(images/course-item" + (index + 1) + ".jpg)")
+								.content
+									.top
+										.col-12
+											.title
+												a(href="#")= i.t
+										.col-12
+											.subtitle Ярославль
+												br
+												| 20 января
+									.bottom
+										.row
+											.col-12.bottom
+												.label Справки по телефону
+												.line
+											.col-12
+												.phone 8 910 113-72-20
+			// Карусели Брендов
+			.heading-block.with-button(style="margin-top: 65px;")
+				h4.h Наша продукция
+				a.button-style2(href="#")
+					span Все бренды
+			.brands-carousel
+				.prev.base-icon-prev
+				.next.base-icon-next
+				.swiper-container
+					.swiper-wrapper
+						- var n = 0;
+						while n < 6
+							- n++;
+							.swiper-slide
+								a.brand-item(href="#")
+									img(src="images/brand" + n + ".jpg", alt="Brand")
+			.brands-carousel
+				.prev.base-icon-prev
+				.next.base-icon-next
+				.swiper-container
+					.swiper-wrapper
+						- var n = 0;
+						while n < 6
+							- n++;
+							.swiper-slide
+								a.brand-item(href="#")
+									img(src="images/brand" + n + ".jpg", alt="Brand")
+			.brands-carousel
+				.prev.base-icon-prev
+				.next.base-icon-next
+				.swiper-container
+					.swiper-wrapper
+						- var n = 0;
+						while n < 6
+							- n++;
+							.swiper-slide
+								a.brand-item(href="#")
+									img(src="images/brand" + n + ".jpg", alt="Brand")
+			.heading-block
+				h1.h.h4 Новости
+			.blog-items.row
+				-
+					var array = [
+					{h: 'Конгресс Барселона Октябрь 2019'},
+					{h: 'Redken Новинки Стайлинга'},
+					{h: 'Инструкция По Оплате Через Сбербанк Онлайн'},
+					]
+				each i, index in array
+					.col-12.col-sm-6.col-md-4
+						.blog-item
+							.content
+								.date 15.05.2019
+								a(href="#").title=i.h
+							.img(style="background-image: url(images/post" + (index + 1) + ".jpg)")
+								a(href="#")
+		.about-block.gray-container
+			.container
+				.row
+					.col
+						h5.h Мы самый крупный специализированный дистрибьютор в России на рынке товаров для индустрии красоты
+						.text-t1 Для просмотра цен: и формирования заказа, необходимо заполнить и отправить заявку на регистрацию
+						a(href="#").button-style1
+							span Заявка на регистрацию
+					.col-12.col-md-8.offset-lg-1
+						.text-t2
+							p Мы работаем в плотном взаимодействии с внутренними и внешними экспертами. Прежде всего, с дерматологами, маникюристами и парикмахерами. Данное сотрудничество помогает постоянно совершенствовать пакет товаров и услуг, предлагая потребителям лучшие продукты.
+							p С помощью системного подхода и профессионального сопровождения клиента, компания удерживает лидирующие позиции.
+							p Имеем успешный 15 летний опыт работы в категории салонного бизнеса с выстроенной структурой логистики, коммерции, обучения и IT сопровождения.
+							p За время нашей работы нашими клиентами стали более 7000 салонов красоты, частных парикмахеров и косметологов, находящихся в Москве, московской области и в 15 регионах России.
+							p Наших клиентов объединяет одно, желание расти и развиваться, а наша задача сделать их бизнес более простым и прибыльным.
+							p Приобретая товары у нас, вы можете быть уверены в их качестве. Мы работаем напрямую с такими производителями как L`Oreal Professionnel, MATRIX, KERASTASE, REDKEN, JANSSEN, и многими другими мировыми брендами...
+				.row.instagram-link-blocks
+					.col-12.col-md-4
+						a.instagram-link-block(href="#")
+							span.title Для парикмахеров
+							span.ac
+								i.base-icon-instagram
+								span stalker_consulting
+					.col-12.col-md-4
+						a.instagram-link-block(href="#")
+							span.title Для косметологов
+							span.ac
+								i.base-icon-instagram
+								span stalker_cosmetolog
+					.col-12.col-md-4
+						a.instagram-link-block(href="#")
+							span.title O.P.I Россия
+							span.ac
+								i.base-icon-instagram
+								span opirussia
+
+

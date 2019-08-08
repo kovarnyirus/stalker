@@ -1,0 +1,456 @@
+@import "vars";
+
+::placeholder {
+  color: #999;
+}
+
+::selection {
+  background-color: $accent;
+  color: #c4e5f6;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+.js_active body {
+  overflow: hidden;
+
+  &.loaded {
+    overflow: auto;
+  }
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.tal {
+  text-align: left;
+}
+
+.tar {
+  text-align: right;
+}
+
+.tac {
+  text-align: center;
+}
+
+.to-right {
+  display: block;
+  margin-left: auto;
+}
+
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.white {
+  color: #fff;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.hide {
+  display: none !important;
+}
+
+b,
+strong {
+  font-weight: bold !important;
+}
+
+img {
+  max-width: 100%;
+}
+
+#all {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-row {
+  background-position: 50%;
+  position: relative;
+  z-index: 1;
+  padding: 0.1px 0;
+}
+
+a {
+  @extend %transition;
+  color: $accent;
+  user-select: none;
+  text-decoration: none;
+
+  &:hover {
+    color: $accent2;
+  }
+}
+
+.clearfix::after,
+.main-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  line-height: 1;
+  margin: .3em 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 80px;
+  font-weight: $h_weight;
+  line-height: 1.28;
+}
+
+h2,
+.h2 {
+  font-size: 55px;
+  font-weight: $h_weight;
+  line-height: lh(65, 55);
+}
+
+h3,
+.h3 {
+  font-size: 28px;
+  font-weight: $h_weight;
+  line-height: lh(32, 28);
+}
+
+h4,
+.h4 {
+  font-size: 25px;
+  font-weight: $h_weight;
+}
+
+h5,
+.h5 {
+  font-size: 20px;
+  font-weight: $h_weight;
+  line-height: 160%;
+}
+
+h6,
+.h6 {
+  font-size: 16px;
+  font-weight: $h_weight;
+}
+
+@include media-breakpoint-down(lg) {
+  h1,
+  .h1 {
+    font-size: 55px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 28px;
+  }
+
+  h3,
+  .h3 {
+    font-size: 24px;
+  }
+
+  h4,
+  .h4 {
+    font-size: 18px;
+  }
+
+  h5,
+  .h5 {
+    font-size: 16px;
+  }
+
+  h6,
+  .h6 {
+    font-size: 15px;
+  }
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.bg-cover {
+  background-size: cover !important;
+}
+
+.bg-contain {
+  background-size: contain !important;
+}
+
+.light-color {
+  color: #fff;
+}
+
+.main-container {
+  //overflow: hidden;
+}
+
+/*
+- Scroll Bar
+*/
+
+.scroll-wrapper {
+  padding: 0 !important;
+  position: relative;
+
+  >.scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0 20px 0 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important;
+
+    &::-webkit-scrollbar {
+      height: 0;
+      width: 0;
+    }
+  }
+}
+
+.scrollbar-inner>.scroll-element {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+
+  div {
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  &.scroll-x {
+    bottom: 2px;
+    height: 5px;
+    left: 0;
+    width: 100%;
+  }
+
+  &.scroll-y {
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 5px;
+  }
+
+  .scroll-element_outer {
+    overflow: hidden;
+  }
+
+  .scroll-element_track,
+  .scroll-bar {
+  }
+
+  .scroll-element_track {
+    background-color: #E0E0E0;
+  }
+
+  .scroll-bar {
+    background-color: $accent;
+    cursor: pointer;
+    transition: background-color 300ms ease-in-out;
+  }
+
+  &:hover .scroll-bar,
+  &.scroll-draggable .scroll-bar {
+    background-color: $accent2;
+  }
+}
+
+.scroll-element {
+  display: none;
+  box-sizing: content-box;
+
+  div {
+    box-sizing: content-box;
+  }
+
+  &.scroll-x.scroll-scrollx_visible,
+  &.scroll-y.scroll-scrolly_visible {
+    display: block;
+  }
+
+  .scroll-bar,
+  .scroll-arrow {
+    cursor: default;
+  }
+}
+
+.scroll-textarea {
+  border: 1px solid #cccccc;
+  border-top-color: #999999;
+
+  >.scroll-content {
+    overflow: hidden !important;
+
+    >textarea {
+      border: none !important;
+      box-sizing: border-box;
+      height: 100% !important;
+      margin: 0;
+      max-height: none !important;
+      max-width: none !important;
+      overflow: scroll !important;
+      outline: none;
+      padding: 2px;
+      position: relative !important;
+      top: 0;
+      width: 100% !important;
+
+      &::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+      }
+    }
+  }
+}
+
+.row-gap-1 {
+  margin: 0 -1px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 1px;
+  }
+}
+
+.row-gap-2 {
+  margin: 0 -2px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 2px;
+  }
+}
+
+.row-gap-3 {
+  margin: 0 -3px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 3px;
+  }
+}
+
+.row-gap-4 {
+  margin: 0 -4px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 4px;
+  }
+}
+
+.row-gap-5 {
+  margin: 0 -5px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 5px;
+  }
+}
+
+.row-gap-10 {
+  margin: 0 -10px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 10px;
+  }
+}
+
+.row-gap-15 {
+  margin: 0 -15px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 15px;
+  }
+}
+
+.row-gap-20 {
+  margin: 0 -20px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 20px;
+  }
+}
+
+.row-gap-25 {
+  margin: 0 -25px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 25px;
+  }
+}
+
+.row-gap-30 {
+  margin: 0 -30px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 30px;
+  }
+}
+
+.row-gap-35 {
+  margin: 0 -35px;
+
+  > [class*="col"],
+  > [class^="col"] {
+    padding: 0 35px;
+  }
+}

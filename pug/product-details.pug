@@ -1,0 +1,414 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Johnny\'s Chop Shop Сухой шампунь 200 мл',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          a(href="#") Каталог продукции
+          span.sep >
+          span Johnny's Chop Shop Сухой шампунь 200 мл
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .product-details-block
+        .row
+          .col-12.col-md-6
+            .product-images
+              .pi-slider
+                .swiper-container
+                  .swiper-wrapper
+                    -
+                      var array = [
+                        {i: 'images/prod.jpg'},
+                        {i: 'images/prod.jpg'},
+                        {i: 'images/prod.jpg'},
+                      ]
+                    each i in array
+                      .swiper-slide
+                        img(src=i.i, alt="Prod")
+              .pi-thumbs
+                .swiper-container
+                  .swiper-wrapper
+                    each i in array
+                      .swiper-slide
+                        img(src=i.i, alt="Prod")
+          .col
+            .product-heading
+              .h
+                span 001802 
+                | Johnny's Chop Shop Сухой шампунь 200 мл
+              .sub-h Освежающий И Очищающий Уход Для Волос
+            .product-stock 1 280 шт.
+            .product-attrs.row
+              -
+                var array = [
+                  {l: 'Артикул', v: '74568966899'},
+                  {l: 'Марка', v: 'Марка'},
+                  {l: 'Категория', v: 'Шампуни', a: '#'},
+                  {l: 'Страна', v: 'Испания'},
+                  {l: 'Гамма', v: 'Пример гаммы с сокращ...', a: '#'},
+                  {l: 'Линия', v: 'Пример линии с сокращ...', a: '#'},
+                ]
+              each i in array
+                .item.col-12.col-sm-6
+                  .label= i.l
+                  .value
+                    if i.a
+                      a(href="#")= i.v
+                    else
+                      = i.v
+            .product-variations
+              .item
+                .label Цвет
+                .variations
+                  -
+                    var array = [
+                      {hex: '#E53167'},
+                      {hex: '#2394E6'},
+                      {hex: '#74CAC0'},
+                      {hex: '#000000'},
+                      {hex: '#DCDCDC'},
+                    ]
+                  each i, index in array
+                    .radio-color-item
+                      input(type="radio" name="product-color" id="radio-color"+index)
+                      label(for="radio-color"+index)
+                        span(style="background-color: "+i.hex)
+              .item
+                .label Объем
+                .variations
+                  -
+                    var array = [
+                      {l: '200 мл'},
+                      {l: '500 мл'},
+                    ]
+                  each i, index in array
+                    .radio-label-item
+                      input(type="radio" name="product-weight" id="radio-weight"+index)
+                      label(for="radio-weight"+index)
+                        span= i.l
+
+            .product-price-block
+              .quantity-block
+                .b.minus.base-icon-minus
+                input.input(type="number" value="1" min="1" max="10")
+                .b.plus.base-icon-plus
+              .symbol Х
+              .price 5 634 ₽
+              .symbol =
+              .total 5 634 ₽
+            .product-buttons
+              a(href="#").button-style3
+                span К заказу
+              a(href="#").add-to-cart-button.button-style2.added
+                i.base-icon-check
+                span Товар добавлен в корзину
+            .product-desc Сухой шампунь - это стильный и "удобный" косметический продукт для потрясающего результата. Представляет....
+            .bottom
+              a.doc-link(href="#")
+                i.base-icon-doc
+                span сертификат
+      .product-details-tabs.tabs-block
+        .tabs-head.swiper-container
+          .swiper-wrapper
+            .swiper-slide Характеристики
+            .swiper-slide Отзывы
+            .swiper-slide Описание
+            .swiper-slide Рекомендации
+            .swiper-slide Технологии
+        .tabs-body.swiper-container
+          .swiper-wrapper
+            // Tab Характеристики
+            .swiper-slide
+              .heading-block
+                h5.h Характеристики
+              .text-t2
+                p Мы работаем в плотном взаимодействии с внутренними и внешними экспертами. Прежде всего, с дерматологами, маникюристами и парикмахерами. Данное сотрудничество помогает постоянно совершенствовать пакет товаров и услуг, предлагая потребителям лучшие продукты.
+                p С помощью системного подхода и профессионального сопровождения клиента, компания удерживает лидирующие позиции.
+                p Имеем успешный 15 летний опыт работы в категории салонного бизнеса с выстроенной структурой логистики, коммерции, обучения и IT сопровождения.
+            // END Tab Характеристики
+              
+            // Tab Отзывы
+            .swiper-slide
+              .row
+                .col
+                  .heading-block
+                    h5.h Отзывы
+                  .review-total-stars
+                    .item.five
+                      i.base-icon-star
+                        span 5
+                      .value 25
+                    .item.four
+                      i.base-icon-star
+                        span 4
+                      .value 10
+                    .item.three
+                      i.base-icon-star
+                        span 3
+                      .value 3
+                    .item.two
+                      i.base-icon-star
+                        span 2
+                      .value 2
+                    .item.one
+                      i.base-icon-star
+                        span 1
+                      .value 1
+                  .review-items
+                    .empty Еще нет не одного отзыва. Будьте первым, оставьте свой отзыв
+                    .review-item
+                      .wrap
+                        .top
+                          .user Анастасия Волынская, парикмахер, г. Москва
+                          .sourse Источник: 
+                            a(href="#") Socolor.ru
+                        .rating-stars
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#")
+                            i.base-icon-star
+                        .title В одно движение тушь от Elian Lash Revolution♥♥♥ придает ресницам выразительный объем и заметно удлиняет ресницы
+                        .text
+                          p Не представляю свой ежедневный макияж без использования туши для ресниц, некоторые девушки могут не использовать больше ничего, только тушь для легкого, ежедневного макияжа.
+                          p Я стараюсь выбирать именно такие туши, которые удлиняют реснички, а еще лучше. чтобы была такая привлекательная пометка, как "с эффектом накладных ресниц", в таком случае я обязательно делаю выбор именно в ее пользу.
+                    .review-item
+                      .wrap
+                        .top
+                          .user Анастасия Волынская, парикмахер, г. Москва
+                          .sourse Источник: 
+                            a(href="#") Socolor.ru
+                        .rating-stars
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#")
+                            i.base-icon-star
+                        .title В одно движение тушь от Elian Lash Revolution♥♥♥ придает ресницам выразительный объем и заметно удлиняет ресницы
+                        .text
+                          p Не представляю свой ежедневный макияж без использования туши для ресниц, некоторые девушки могут не использовать больше ничего, только тушь для легкого, ежедневного макияжа.
+                          p Я стараюсь выбирать именно такие туши, которые удлиняют реснички, а еще лучше. чтобы была такая привлекательная пометка, как "с эффектом накладных ресниц", в таком случае я обязательно делаю выбор именно в ее пользу.
+                      .answer
+                        .top
+                          .user Администратор Юлия, StalkerConsulting
+                        .text
+                          p Ранее меня не особо привлекали хайлайтеры, почему-то я считала это лишним пунктом в макияже. Но в последнее время все изменилось.
+                    .review-item
+                      .wrap
+                        .top
+                          .user Анастасия Волынская, парикмахер, г. Москва
+                          .sourse Источник: 
+                            a(href="#") Socolor.ru
+                        .rating-stars
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#").active
+                            i.base-icon-star
+                          a(href="#")
+                            i.base-icon-star
+                        .title В одно движение тушь от Elian Lash Revolution♥♥♥ придает ресницам выразительный объем и заметно удлиняет ресницы
+                        .text
+                          p Не представляю свой ежедневный макияж без использования туши для ресниц, некоторые девушки могут не использовать больше ничего, только тушь для легкого, ежедневного макияжа.
+                          p Я стараюсь выбирать именно такие туши, которые удлиняют реснички, а еще лучше. чтобы была такая привлекательная пометка, как "с эффектом накладных ресниц", в таком случае я обязательно делаю выбор именно в ее пользу.
+                        .review-images
+                          - n = 0;
+                          while n < 5
+                            - n++;
+                            .img
+                              a.bg(href="#" style="background-image: url(images/review"+n+".jpg)")
+                  .pagination
+                    a(href="#") 1
+                    span 2
+                    a(href="#") 3
+                .review-form-col.col
+                  .heading-block
+                    h5.h Оставить отзыв
+                  // Если форма отправлена к "review-form-block" добавить класс "completed", если ошибка то "with-error"
+                  form.review-form-block
+                    .input-row
+                      input.style1(type="text" placeholder="Имя *")
+                    .input-row
+                      input.style1(type="text" placeholder="Город *")
+                    .input-row
+                      input.style1(type="text" placeholder="E-mail *")
+                    .input-row
+                      label.rate-label Ваша оценка
+                      .rating-stars
+                        a(href="#").active
+                          i.base-icon-star
+                        a(href="#").active
+                          i.base-icon-star
+                        a(href="#").active
+                          i.base-icon-star
+                        a(href="#").active
+                          i.base-icon-star
+                        a(href="#")
+                          i.base-icon-star
+                    .input-row
+                      textarea.style1(placeholder="Ваш отзыв")
+                    .input-row
+                      label.imgs-label Фото (до 5 шт.)
+                      .review-images
+                        - n = 0;
+                        while n < 3
+                          - n++;
+                          .img
+                            .remove.base-icon-cross
+                            a.bg(href="#" style="background-image: url(images/review"+n+".jpg)")
+                        .add
+                    .error-message Не все поля заполнены корректно
+                    input.button-style3(type="submit" value="Отправить отзыв")
+                    .bottom Нажимая на кнопку «Отправить отзыв», вы даете 
+                      a(href="#") согласие на обработку своих персональных данных.
+                    .thank-you-message
+                      .close.base-icon-cross
+                      .text Спасибо,Ваш отзыв отправлен на модерацию!
+                  .review-form-bottom
+                    a(href="#") Регистрация 
+                    | или 
+                    a(href="#") Вход
+
+            // END Tab Отзывы
+            // Tab Описание
+            .swiper-slide
+              .heading-block
+                h5.h Описание
+              .text-t2
+                p Мы работаем в плотном взаимодействии с внутренними и внешними экспертами. Прежде всего, с дерматологами, маникюристами и парикмахерами. Данное сотрудничество помогает постоянно совершенствовать пакет товаров и услуг, предлагая потребителям лучшие продукты.
+                p С помощью системного подхода и профессионального сопровождения клиента, компания удерживает лидирующие позиции.
+                p Имеем успешный 15 летний опыт работы в категории салонного бизнеса с выстроенной структурой логистики, коммерции, обучения и IT сопровождения.
+            // END Tab Описание
+              
+            // Tab Рекомендации
+            .swiper-slide
+              .heading-block
+                h5.h Рекомендации
+              .text-t2
+                p Мы работаем в плотном взаимодействии с внутренними и внешними экспертами. Прежде всего, с дерматологами, маникюристами и парикмахерами. Данное сотрудничество помогает постоянно совершенствовать пакет товаров и услуг, предлагая потребителям лучшие продукты.
+                p С помощью системного подхода и профессионального сопровождения клиента, компания удерживает лидирующие позиции.
+                p Имеем успешный 15 летний опыт работы в категории салонного бизнеса с выстроенной структурой логистики, коммерции, обучения и IT сопровождения.
+            // END Tab Рекомендации
+            
+            // Tab Технологии
+            .swiper-slide
+              .heading-block
+                h5.h Технологии
+              .text-t2
+                p Мы работаем в плотном взаимодействии с внутренними и внешними экспертами. Прежде всего, с дерматологами, маникюристами и парикмахерами. Данное сотрудничество помогает постоянно совершенствовать пакет товаров и услуг, предлагая потребителям лучшие продукты.
+                p С помощью системного подхода и профессионального сопровождения клиента, компания удерживает лидирующие позиции.
+                p Имеем успешный 15 летний опыт работы в категории салонного бизнеса с выстроенной структурой логистики, коммерции, обучения и IT сопровождения.
+            // END Tab Технологии
+      .heading-block
+        h5.h Рекомендуемые
+      .catalog-carousel.swiper-container
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-wrapper
+          - n = 0;
+          while n < 16
+            - n++;
+            .catalog-item.swiper-slide
+              .wrap
+                .sku AS40100
+                .image
+                  a(href="#")
+                    img(src="images/prod-thumb.jpg" alt="Лак стойкой фиксации с эффектом памяти \"Strong Touch\" 490")
+                a(href="#").name Лак стойкой фиксации с эффектом памяти "Strong Touch" 490
+                .stock 1 280 шт.
+                .stickers
+                  .s-item.sale Уценка
+                  .s-item.new NEW
+                  .s-item.percent %
+                .cart-d
+                  .quantity-block
+                    .b.minus.base-icon-minus
+                    input.input(type="number" value="0" min="0" max="10")
+                    .b.plus.base-icon-plus
+                  .price-block
+                    .price 1 834 ₽
+                    .sub-price 0 ₽
+                .price-details
+                  .pd-item
+                    .label Розница
+                    .price
+                      .old 2 534
+                      span 1 834 ₽
+                  .pd-item
+                    .label Опт (от 3)
+                    .price
+                      .old 1 834
+                      span 1 650 ₽
+                  .pd-item
+                    .label Специалистам
+                    .price
+                      a(href="#") Узнать
+      .heading-block
+        h5.h Вы просматривали
+      .catalog-carousel.swiper-container
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-wrapper
+          - n = 0;
+          while n < 16
+            - n++;
+            .catalog-item.swiper-slide
+              .wrap
+                .sku AS40100
+                .image
+                  a(href="#")
+                    img(src="images/prod-thumb.jpg" alt="Лак стойкой фиксации с эффектом памяти \"Strong Touch\" 490")
+                a(href="#").name Лак стойкой фиксации с эффектом памяти "Strong Touch" 490
+                .stock 1 280 шт.
+                .stickers
+                  .s-item.sale Уценка
+                  .s-item.new NEW
+                  .s-item.percent %
+                .cart-d
+                  .quantity-block
+                    .b.minus.base-icon-minus
+                    input.input(type="number" value="0" min="0" max="10")
+                    .b.plus.base-icon-plus
+                  .price-block
+                    .price 1 834 ₽
+                    .sub-price 0 ₽
+                .price-details
+                  .pd-item
+                    .label Розница
+                    .price
+                      .old 2 534
+                      span 1 834 ₽
+                  .pd-item
+                    .label Опт (от 3)
+                    .price
+                      .old 1 834
+                      span 1 650 ₽
+                  .pd-item
+                    .label Специалистам
+                    .price
+                      a(href="#") Узнать
+

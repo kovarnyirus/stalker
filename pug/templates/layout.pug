@@ -1,0 +1,448 @@
+include ../mixins/_navigation.pug
+
+//- nav.navigation
+     +navigation('home')
+    .nav-butter.visible_menu
+      span
+      span
+      span
+
+//- Variables
+
+- 
+  var 
+    logged = false,
+    header_space = false
+
+block vars
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    title= title
+    meta(name="description" content="")
+    meta(property="og:image" content="#")
+
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(name="theme-color" content="#000")
+    link(rel="icon" href="images/favicon.ico")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800&amp;subset=cyrillic")
+    link(rel="stylesheet" href="css/ion.rangeSlider.css")
+    link(rel="stylesheet" href="css/select2.css")
+    link(rel="stylesheet" href="css/swiper.css")
+    link(rel="stylesheet" href="css/animate.css")
+    link(rel="stylesheet" href="css/iconfont.css")
+    link(rel="stylesheet" href="css/main.css")
+    script.
+      var $initialIndex = 0
+  body
+    #page
+      //- Site Header
+      block header
+        header.site-header
+          .container
+            .header-top
+              ul.header-top-nav
+                li
+                  a(href="#") Клиентам
+                li
+                  a(href="#") Наша продукция
+                li
+                  a(href="#") Для поставщиков
+                li
+                  a(href="#") Контакты
+                li
+                  a(href="#") О нас
+              .right-side
+                .contact-item.city-select
+                  i.base-icon-placeholder
+                  span Санкт-Петербург
+                a.contact-item(href="#")
+                  i.base-icon-phone
+                  span 8 (495) 739 07 80
+                a.contact-item(href="#")
+                  i.base-icon-mail
+                  span info-stalker@mirlk.ru
+                a.contact-item.strong(href="#")
+                  i.base-icon-calendar
+                  span График доставки
+            .header-wrap
+              .site-logo
+                a(href="/")
+                  img(src="images/logo.svg", alt="Сталкер-Консалтинг")
+              .search-block
+                .search-form
+                  input(type="text").input
+                  button.submit.base-icon-search
+                // Чтобы показать результаты добавить к "search-result-popup" класс "show"
+                .search-result-popup
+                  .srp-item
+                    a(href="#")
+                      span.img
+                        img(src="images/prod-thumb.jpg" alt="product")
+                      span Пробник <span>маски</span> для поврежденных волос "Mask For Damaged Hair" 15
+                  .srp-item
+                    a(href="#")
+                      span.img
+                        img(src="images/prod-thumb.jpg" alt="product")
+                      span Пробник <span>маски</span> для поврежденных волос "Mask For Damaged Hair" 15
+                  .srp-item
+                    a(href="#")
+                      span <span>Маски</span> для волос
+                  .srp-item
+                    a(href="#")
+                      span <span>Уход за волосами</span>
+              a.button-style1(href="#")
+                if logged
+                  span Заказы
+                else
+                  span Обучение
+              a.button-style1(href="#")
+                if logged
+                  span Обучение
+                else
+                  span Вход<br>для клиентов
+              a.button-style1(href="#")
+                if logged
+                  span Обратная связь
+                else
+                  span Заявка<br>на регистрацию
+          .navigations-wrap
+            .container
+              nav.navigation
+                .nav-butter
+                  span
+                  span
+                  span
+                ul.menu
+                  li.menu-item-has-children.special
+                    a(href="#") Разделы
+                    ul.sub-menu
+                      li
+                        a(href="#")
+                          | Ухаживающая Серия
+                          em 15
+                      li
+                        a(href="#")
+                          | Востанавливающая Серия
+                          em 15
+                      li
+                        a(href="#")
+                          | Питающая Серия
+                          em 15
+                      li
+                        a(href="#")
+                          | Вторая Серия
+                          em 15
+                      li.special
+                        a(href="#")
+                          | Еще Какой То Раздел
+                          em 15
+                  li.menu-item-has-children.special
+                    a(href="#") Каталог
+                  li
+                    a(href="#") Визажистам
+                  li
+                    a(href="#") Косметологам
+                  li
+                    a(href="#") Мастерам маникюра
+                  li.current-menu-item
+                    a(href="#") Барберам
+                  li
+                    a(href="#") Еще категория
+              .minicart
+                .content
+                  i.base-icon-cart
+                  if logged
+                    .inner
+                      .label Александр В. 
+                      .total Заказ на 18 600 р.
+                  else
+                    .inner
+                      .label Пусто
+                  i.base-icon-down
+                if logged
+                  ul
+                    li
+                      a(href="#") Личные данные
+                    li
+                      a(href="#") Текущий заказ
+                    li
+                      a(href="#") Архив заказов
+                    li
+                      a(href="#") Выход
+                else
+                  ul
+                    li
+                      a(href="#") Вход
+              .brand-navigation
+                .label Бренды
+                .swiper-container
+                  .swiper-wrapper
+                    -
+                      var array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','Y','А','Б','Г','З','К','Л','М','О','С','Т','Х','Ш','0-9'] 
+                    each i in array
+                      .swiper-slide= i
+        .mobile-header
+          .mh-top
+            .container
+              .nav-butter
+                span
+                span
+                span
+              .site-logo
+                a(href="/")
+                  img(src="images/logo.svg", alt="Сталкер-Консалтинг")
+          .mh-middle
+            .container
+              .mh-categs Каталог
+              .search-form
+                input(type="text").input
+                button.submit.base-icon-search
+              .mh-minicart
+                .content
+                  i.base-icon-cart
+                if logged
+                  ul
+                    li
+                      a(href="#") Личные данные
+                    li
+                      a(href="#") Текущий заказ
+                    li
+                      a(href="#") Архив заказов
+                    li
+                      a(href="#") Выход
+                else
+                  ul
+                    li
+                      a(href="#") Вход
+          .brand-navigation
+            .container
+              .label Бренды
+              .swiper-container
+                .swiper-wrapper
+                  -
+                    var array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','Y','А','Б','Г','З','К','Л','М','О','С','Т','Х','Ш','0-9'] 
+                  each i in array
+                    .swiper-slide= i
+          .mh-side
+            .wrap
+              .container
+                .buttons
+                  a.button-style1(href="#")
+                    if logged
+                      span Заказы
+                    else
+                      span Обучение
+                  a.button-style1(href="#")
+                    if logged
+                      span Обучение
+                    else
+                      span Вход<br>для клиентов
+                  a.button-style1(href="#")
+                    if logged
+                      span Обратная связь
+                    else
+                      span Заявка<br>на регистрацию
+              nav.mh-navigation
+                .container
+                  ul.menu
+                    li.menu-item-has-children.special
+                      a(href="#") Разделы
+                        i.base-icon-next
+                      ul.sub-menu
+                        li
+                          a(href="#")
+                            | Ухаживающая Серия
+                            em 15
+                        li
+                          a(href="#")
+                            | Востанавливающая Серия
+                            em 15
+                        li
+                          a(href="#")
+                            | Питающая Серия
+                            em 15
+                        li
+                          a(href="#")
+                            | Вторая Серия
+                            em 15
+                        li.special
+                          a(href="#")
+                            | Еще Какой То Раздел
+                            em 15
+                    li.menu-item-has-children.special
+                      a(href="#") Каталог
+                    li
+                      a(href="#") Визажистам
+                    li
+                      a(href="#") Косметологам
+                    li
+                      a(href="#") Мастерам маникюра
+                    li.current-menu-item
+                      a(href="#") Барберам
+                    li
+                      a(href="#") Еще категория
+              .container
+                ul.mh-nav
+                  li
+                    a(href="#") Клиентам
+                  li
+                    a(href="#") Наша продукция
+                  li
+                    a(href="#") Для поставщиков
+                  li
+                    a(href="#") Контакты
+                  li
+                    a(href="#") О нас
+              .mh-contacts
+                .container
+                  a.contact-item(href="#")
+                    i.base-icon-phone
+                    span 8 (495) 739 07 80
+                  .contact-item.city-select
+                    i.base-icon-placeholder
+                    span Санкт-Петербург
+                  a.contact-item(href="#")
+                    i.base-icon-mail
+                    span info-stalker@mirlk.ru
+                  a.contact-item.strong(href="#")
+                    i.base-icon-calendar
+                    span График доставки
+
+        // Попап выбора города
+
+        .select-city-popup.popup-block
+          .popup-overlay
+          .container
+            .popup-wrap
+              .close.variant2.base-icon-cross
+              .h Выберите свой город
+              .city-items
+                .city-col
+                  -
+                    var array = [
+                      {h: 'Москва'},
+                      {h: 'Волгоград'},
+                      {h: 'Воронеж'},
+                      {h: 'Екатеринбург'},
+                      {h: 'Казань'}
+                    ]
+                  each i, index in array
+                    .item
+                      .input-box
+                        input(type="radio" name="city" id="city-"+index)
+                        label(for="city-"+index)
+                          span= i.h
+                .city-col
+                  -
+                    var array = [
+                      {h: 'Краснодар'},
+                      {h: 'Красноярск'},
+                      {h: 'Нижний Новгород'},
+                      {h: 'Новосибирск'},
+                      {h: 'Пермь'},
+                    ]
+                  each i, index in array
+                    .item
+                      .input-box
+                        input(type="radio" name="city" id="city-2"+index)
+                        label(for="city-2"+index)
+                          span= i.h
+                .city-col
+                  -
+                    var array = [
+                      {h: 'Ростов-на-Дону'},
+                      {h: 'Самара'},
+                      {h: 'Санкт-Петербург'},
+                      {h: 'Уфа'},
+                      {h: 'Челябинск'},
+                    ]
+                  each i, index in array
+                    .item
+                      .input-box
+                        input(type="radio" name="city" id="city-3"+index)
+                        label(for="city-3"+index)
+                          span= i.h
+                .city-col.custom-city
+                  label Или укажите в поле
+                  .inline-form
+                    input.input(type="text" placeholder="Введите название города")
+                    input(type="button" value="Выбрать").button-style3.small
+
+        if header_space
+          .header-space
+      //- END Site Header
+
+      //- Body Content
+      block content
+      //- END Body Content
+
+      //- Site Footer
+      block footer
+        .cookie-popup-block.cookie-hide
+          .container
+            p Мы используем файлы cookie и сбор персональных данных, чтобы предоставить вам лучший пользовательский сервис и показывать вам индивидуальные предложения на нашем сайте. Продолжая просматривать наш веб-сайт, вы соглашаетесь c использованием cookie и обработкой персональных данных. 
+              a(href="#") Узнать больше
+            .close.base-icon-close
+        footer.site-footer(class=footer)
+          .container
+            .row
+              .footer-col.col-12.col-md-4.col-lg-3
+                .footer-logo
+                  a(href="/")
+                    img(src="images/footer-logo.svg" alt="Сталкер-Консалтинг")
+                    span.t Сталкер Консалтинг
+                    span.t2 Stalker consalting
+                .copyright © ООО "МЛК Интернет технологии"
+              .footer-col.col-12.col-sm
+                ul.footer-menu
+                  li
+                    a(href="#") Клиентам
+                  li
+                    a(href="#") Наша продукция
+                  li
+                    a(href="#") Для поставщиков
+                  li
+                    a(href="#") Контакты
+                  li
+                    a(href="#") Новости
+                a.dev(href="#")
+                  span Разработано:
+                  img(src="images/dev-logo.svg" alt="Metasharks")
+                  span Metasharks
+              .footer-col.col-12.col-md-4
+                .contact-rows
+                  .contact-row
+                    .l Служба клиентов (г. Москва)
+                    .v 
+                      a(href="tel: 84957390780") 8 (495) 739 07 80
+                      span  доб. 127
+                  .contact-row
+                    .l Служба клиентов (Московская Область)
+                    .v 
+                      a(href="tel: 84957390780") 8 (495) 739 07 80
+                      span  доб. 436, 464, 219, 129, 106, 529
+                  .contact-row
+                    .l Служба клиентов (Регионы)
+                    .v 
+                      a(href="tel: 84957390780") 8 (495) 739 07 80
+                      span  доб. 124, 102
+                .contact-item
+                  i.base-icon-mail
+                  span info-stalker@mirlk.ru
+          
+      //- END Site Footer
+
+      block scripts
+        script(src="https://code.jquery.com/jquery-2.2.4.min.js")
+        script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA5bpEs3xlB8vhxNFErwoo3MXR64uavf6Y&sensor=false&ver=5.0.3")
+        script(src="js/jquery.scrollbar.min.js")
+        script(src="js/ion.rangeSlider.min.js")
+        script(src="js/parallax.min.js")
+        script(src="js/select2.min.js")
+        script(src="js/swiper.min.js")
+        script(src="js/scripts.js")

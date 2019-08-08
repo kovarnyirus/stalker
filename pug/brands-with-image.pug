@@ -1,0 +1,85 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Бренды',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Бренды
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Бренды
+      .brand-top-filter
+        .select-item
+          .label Назначение
+          .select
+            select.style1
+              option Парикмахерам
+              option Парикмахерам
+              option Парикмахерам
+        .switcher
+          .label Показывать
+          a(href="#").button-style1
+            span С логотипами
+          a(href="#").button-style1.active
+            span Только названия
+        .search-form
+          input(type="text" placeholder="Найти бренд").input
+          button.submit.base-icon-search
+      .brand-rows.with-logos
+        .row
+          .col-auto
+            .letter A
+          .items.col
+            - n = 0;
+            while n < 6
+              - n++;
+              a.brand-item(href="#")
+                img(src="images/brand"+n+".jpg", alt="Brand")
+            - n = 0;
+            while n < 6
+              - n++;
+              a.brand-item(href="#")
+                img(src="images/brand"+n+".jpg", alt="Brand")
+        .row
+          .col-auto
+            .letter B
+          .items.col
+            - n = 0;
+            while n < 6
+              - n++;
+              a.brand-item(href="#")
+                img(src="images/brand"+n+".jpg", alt="Brand")
+            - n = 0;
+            while n < 6
+              - n++;
+              a.brand-item(href="#")
+                img(src="images/brand"+n+".jpg", alt="Brand")
+        .row
+          .col-auto
+            .letter c
+          .items.col
+            - n = 0;
+            while n < 6
+              - n++;
+              a.brand-item(href="#")
+                img(src="images/brand"+n+".jpg", alt="Brand")
+            - n = 0;
+            while n < 6
+              - n++;
+              a.brand-item(href="#")
+                img(src="images/brand"+n+".jpg", alt="Brand")
+
+
+

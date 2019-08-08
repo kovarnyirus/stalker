@@ -1,0 +1,167 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Главная',
+      logged = false; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Каталог продукции
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924 ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Заявка на регистрацию
+      .tabs-block
+        .tabs-head.swiper-container
+          .swiper-wrapper
+            .swiper-slide Как физическое лицо
+            .swiper-slide Юридическое лицо
+        .tabs-body.swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              form.registration-form
+                .row
+                  .col-12.col-sm-6
+                    .input-row
+                      label Профессиональная деятельность
+                      select.style1
+                        option Парикмахер
+                        option Парикмахер
+                        option Парикмахер
+                        option Парикмахер
+                  -
+                    var array = [
+                      {h: 'Телефон', c: 'col-sm-6'},
+                      {h: 'Фамилия *', c: 'col-sm-6'},
+                      {h: 'Имя *', c: 'col-sm-6'},
+                      {h: 'Отчество', c: 'col-sm-6'},
+                      {h: 'Город', c: 'col-sm-6'},
+                      {h: 'Фактический адрес', c: ''},
+                      {h: 'Краткий комментарий', c: ''},
+                    ]
+                  each i in array
+                    .col-12(class=i.c)
+                      .input-row
+                        label= i.h
+                        input.style1
+                  .col-12.col-sm-6
+                    .upload-input
+                      .c
+                        .l Загрузить паспорт 
+                        .s 1 страница
+                      label
+                        input(type="file")
+                        .b Выбрать
+                      .v
+                        span
+                        i.base-icon-cross
+                  .col-12.col-sm-6
+                    .upload-input
+                      .c
+                        .l Загрузить документ об образовании
+                        .s 1 страница
+                      label
+                        input(type="file")
+                        .b Выбрать
+                      .v
+                        span
+                        i.base-icon-cross
+                  .col-12.col-sm-6
+                    .input-box
+                      input(type="checkbox" id="lic" checked)
+                      label(for="lic")
+                        span 
+                          | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с 
+                          a(href="#") Условиями
+                  .buttons.col-12.col-sm-6
+                    .button
+                      input.button-style3(type="submit" value="Отправить заявку")
+                    .login
+                      | Есть аккаунт?
+                      br
+                      a(href="#") Войти
+            .swiper-slide
+              form.registration-form
+                .row
+                  .col-12.col-sm-6
+                    .input-row
+                      label Профессиональная деятельность
+                      select.style1
+                        option Парикмахер
+                        option Парикмахер
+                        option Парикмахер
+                        option Парикмахер
+                  -
+                    var array = [
+                      {h: 'Телефон', c: 'col-sm-6'},
+                      {h: 'Фамилия *', c: 'col-sm-6'},
+                      {h: 'Название компании', c: 'col-sm-6'},
+                      {h: 'Имя *', c: 'col-sm-6'},
+                      {h: 'Название Юр. лица', c: 'col-sm-6'},
+                      {h: 'Отчество', c: 'col-sm-6'},
+                      {h: 'Город', c: 'col-sm-6'},
+                      {h: 'Фактический адрес', c: ''},
+                      {h: 'Краткий комментарий', c: ''},
+                    ]
+                  each i in array
+                    .col-12(class=i.c)
+                      .input-row
+                        label= i.h
+                        input.style1
+                  .col-12.col-sm-6
+                    .upload-input
+                      .c
+                        .l Загрузить паспорт 
+                        .s 1 страница
+                      label
+                        input(type="file")
+                        .b Выбрать
+                      .v
+                        span
+                        i.base-icon-cross
+                  .col-12.col-sm-6
+                    .upload-input
+                      .c
+                        .l Загрузить документ об образовании
+                        .s 1 страница
+                      label
+                        input(type="file")
+                        .b Выбрать
+                      .v
+                        span
+                        i.base-icon-cross
+                  .col-12.col-sm-6
+                    .input-box
+                      input(type="checkbox" id="lic2" checked)
+                      label(for="lic2")
+                        span 
+                          | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с 
+                          a(href="#") Условиями
+                  .buttons.col-12.col-sm-6
+                    .button
+                      input.button-style3(type="submit" value="Отправить заявку")
+                    .login
+                      | Есть аккаунт?
+                      br
+                      a(href="#") Войти
+      .registration-bottom
+        h6.h Кто может стать нашим клиентом:
+        .row
+          .col
+            ul.style1
+              li Салон красоты
+              li Частный мастер
+              li Косметологический кабинет
+          .col
+            ul.style1
+              li Частный косметолог
+              li Магазин профессиональной косметики.

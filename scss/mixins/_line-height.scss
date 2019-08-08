@@ -1,0 +1,5 @@
+@import "../vars";
+
+@function lh($pixels, $context: $default-font-size) {
+  @return #{$pixels/$context};
+}

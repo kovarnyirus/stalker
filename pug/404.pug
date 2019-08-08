@@ -1,0 +1,28 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Страница не найдена',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Страница не найдена
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Страница не найдена
+      .block-404
+        .n 404
+        .t Страница не найдена
+        .links
+          a(href="#") Назад
+          a(href="#") Главная

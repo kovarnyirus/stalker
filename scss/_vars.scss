@@ -1,0 +1,14 @@
+$default-font: 'Montserrat', sans-serif;
+$text: #333333;
+$accent: #2394E6;
+$accent2: #E53131;
+$h_weight: bold;
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$default-font-size: 13;
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1200px);
+ 
+$gutter: $grid-gutter-width;

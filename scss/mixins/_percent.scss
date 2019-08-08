@@ -1,0 +1,3 @@
+@function percent($full, $piece, $v) {
+  @return #{$piece*100/$full+$v};
+}

@@ -1,0 +1,28 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Спасибо за заказ',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Спасибо за заказ
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Спасибо за заказ
+      .order-detail-block
+        .order-number
+          .label Ваш номер заказа
+          .value №727727
+        a(href="#").button-style3.variant2 Оплатить
+        a(href="#").button-style3.variant2 Скачать счет на оплату

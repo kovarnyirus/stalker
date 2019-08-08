@@ -1,0 +1,54 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Обучение',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Обучение
+      .heading-block
+        h1.h.h4 Обучение
+      .content-block-with-sidebar.row
+        .col-12.col-lg-4
+          ul.links-menu
+            li.current-menu-item
+              a(href="#") Расписание обучений
+            li
+              a(href="#") Анонсы Тренингов
+        .col
+          .heading-block.with-button
+            h5.h Расписание обучений
+          .lesson-items.row
+            -
+              var array = [
+                {t: 'Для парикмахеров', a: ''},
+                {t: 'Для косметологов', a: ''},
+                {t: 'Для визажистов', a: ''},
+                {t: 'Для барберов', a: ''},
+                {t: 'Для мастеров маникюра', a: 'on-right'},
+                {t: 'Для еще специалиста', a: 'on-right'},
+              ]
+            each i, index in array
+              .col-12.col-sm-6
+                .lesson-item(class=i.a style="background-image: url(images/course"+(index+1)+".jpg)")
+                  a(href="#")
+                    span=i.t
+
+
+
+
+
+
+
+
+
+
+

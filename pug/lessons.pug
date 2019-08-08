@@ -1,0 +1,54 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Тренинги Для Косметологов',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Тренинги Для Косметологов
+      .heading-block
+        h1.h.h4 Тренинги Для Косметологов
+      .content-block-with-sidebar.row
+        .col-12.col-sm-4
+          form.lessons-filter-form
+            .input-row
+              label Месяц
+              select.style1
+                option(value="") Январь 2019
+                option(value="") Январь 2019
+                option(value="") Январь 2019
+        .col
+          .lesson-in-row-items
+            -
+              var array = [
+                {t: 'Семинар MARAVI BEACH и мастер класс alanhadash в один день!', l: 'Москва Гамсоновский пер. 2 стр 2 офис 108', d: '20 января 2019'},
+                {t: 'ВЕ COLOR 12 MINUTE обучающий семинар', l: 'Зеленоград, Гамсоновский пер. 2 стр 2 офис 108', d: '20 мая 2019'},
+                {t: 'Семинар MARAVI BEACH и мастер класс alanhadash в один день!', l: 'Москва Гамсоновский пер. 2 стр 2 офис 108', d: '20 января 2019'},
+                {t: 'ВЕ COLOR 12 MINUTE обучающий семинар ', l: 'Зеленоград, Гамсоновский пер. 2 стр 2 офис 108', d: '20 мая 2019'},
+              ]
+            each i, index in array
+              .lesson-item
+                .title
+                  a(href="#")= i.t
+                .date= i.d
+                .location= i.l
+                
+
+
+
+
+
+
+
+
+
+
+

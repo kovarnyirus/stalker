@@ -1,0 +1,25 @@
+{
+  "name": "stalker.loc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "author": "Anton Pankevich",
+  "license": "GPL 3.0",
+  "devDependencies": {
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-iconfont": "^10.0.3",
+    "gulp-iconfont-css": "^3.0.0",
+    "gulp-image": "^5.0.0",
+    "gulp-line-ending-corrector": "^1.0.3",
+    "gulp-notify": "^3.2.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rsync": "0.0.8",
+    "gulp-sass": "^4.0.2",
+    "gulp-string-replace": "^1.1.2",
+    "gulp-util": "^3.0.8",
+    "gulp-zip": "^5.0.0"
+  }
+}

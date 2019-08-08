@@ -1,0 +1,206 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Главная',
+      logged = true;
+
+block content
+  main.main-container
+    .container
+      .slider-block.swiper-container
+        .swiper-pagination
+        .swiper-wrapper
+          -
+            var array = [
+              {i: 'slide'},
+              {i: 'bg2'},
+            ]
+          each i in array
+            .swiper-slide(style="background-image: url(images/"+i.i+".jpg)")
+      // Категории
+      .categories-block.row
+        -
+          var array = [
+            {i: 'cat1', h: 'Парикмахерам'},
+            {i: 'cat2', h: 'Визажистам'},
+            {i: 'cat3', h: 'Косметологам'},
+            {i: 'cat4', h: 'Мастерам маникюра'},
+            {i: 'cat5', h: 'Барберам'},
+            {i: 'cat6', h: 'Стилистам'},
+          ]
+        each i in array
+          .category-item.col-12.col-sm-6.col-md-4(style="background-image: url(images/"+i.i+".jpg)")
+            .title= i.h
+            a(href="#")
+      // Акции
+      .heading-block.with-button
+        h4.h Акции и скидки
+        a.button-style2(href="#")
+          span Все акции
+      .sale-carousel
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-container
+          .swiper-wrapper
+            -
+              var array = [
+                {i: 'sale1', h: 'ESTEL -50%'},
+                {i: 'sale2', h: 'ESTEL -20%'},
+                {i: 'sale3', h: 'ESTEL -520%'},
+              ]
+            each i in array
+              .swiper-slide
+                .sale-item(style="background-image: url(images/"+i.i+".jpg)")
+                  .content
+                    .title= i.h
+                    .desc Описание акции<br>в пару строк для наглядности<br>возможные условия
+                    .button
+                      a.button-style2(href="#")
+                        span Подробнее
+      // Баннер обучения
+      .banner-block(style="background-image: url(images/bg2.jpg)")
+        .content
+          .title Обучение
+          .desc Анонсы тренингов и семинаров<br>от мировых брендов и лучших мастеров в сфере моды и красоты
+          a.button-style2.variant2(href="#")
+            span Перейти в раздел
+      // Карусели Брендов
+      .heading-block.with-button(style="margin-top: 65px;")
+        h4.h Наша продукция
+        a.button-style2(href="#")
+          span Все бренды
+      h6.brand-heading Уход за волосами
+      .brands-carousel
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-container
+          .swiper-wrapper
+            - var n = 0;
+            while n < 6
+              - n++;
+              .swiper-slide
+                a.brand-item(href="#")
+                  img(src="images/brand"+n+".jpg", alt="Brand")
+      h6.brand-heading Парикмахерские инструменты
+      .brands-carousel
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-container
+          .swiper-wrapper
+            - var n = 0;
+            while n < 6
+              - n++;
+              .swiper-slide
+                a.brand-item(href="#")
+                  img(src="images/brand"+n+".jpg", alt="Brand")
+      h6.brand-heading Уход за полостью рта
+      .brands-carousel
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-container
+          .swiper-wrapper
+            - var n = 0;
+            while n < 6
+              - n++;
+              .swiper-slide
+                a.brand-item(href="#")
+                  img(src="images/brand"+n+".jpg", alt="Brand")
+      h6.brand-heading Косметика для барбершопов
+      .brands-carousel
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-container
+          .swiper-wrapper
+            - var n = 0;
+            while n < 6
+              - n++;
+              .swiper-slide
+                a.brand-item(href="#")
+                  img(src="images/brand"+n+".jpg", alt="Brand")
+      h6.brand-heading Аксессуары для салонов красоты
+      .brands-carousel
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-container
+          .swiper-wrapper
+            - var n = 0;
+            while n < 6
+              - n++;
+              .swiper-slide
+                a.brand-item(href="#")
+                  img(src="images/brand"+n+".jpg", alt="Brand")
+      h6.brand-heading Маникюр
+      .brands-carousel
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-container
+          .swiper-wrapper
+            - var n = 0;
+            while n < 6
+              - n++;
+              .swiper-slide
+                a.brand-item(href="#")
+                  img(src="images/brand"+n+".jpg", alt="Brand")
+      h6.brand-heading Профессиональная косметология
+      .brands-carousel
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-container
+          .swiper-wrapper
+            - var n = 0;
+            while n < 6
+              - n++;
+              .swiper-slide
+                a.brand-item(href="#")
+                  img(src="images/brand"+n+".jpg", alt="Brand")
+      h6.brand-heading Чай и травяные напитки
+      .brands-carousel
+        .prev.base-icon-prev
+        .next.base-icon-next
+        .swiper-container
+          .swiper-wrapper
+            - var n = 0;
+            while n < 6
+              - n++;
+              .swiper-slide
+                a.brand-item(href="#")
+                  img(src="images/brand"+n+".jpg", alt="Brand")
+    .about-block.gray-container
+      .container
+        .row
+          .col
+            h5.h Мы самый крупный специализированный дистрибьютор в России на рынке товаров для индустрии красоты
+            .text-t1 Для просмотра цен: и формирования заказа, необходимо заполнить и отправить заявку на регистрацию
+            a(href="#").button-style1
+              span Заявка на регистрацию
+          .col-12.col-md-8.offset-lg-1
+            .text-t2
+              p Мы работаем в плотном взаимодействии с внутренними и внешними экспертами. Прежде всего, с дерматологами, маникюристами и парикмахерами. Данное сотрудничество помогает постоянно совершенствовать пакет товаров и услуг, предлагая потребителям лучшие продукты.
+              p С помощью системного подхода и профессионального сопровождения клиента, компания удерживает лидирующие позиции.
+              p Имеем успешный 15 летний опыт работы в категории салонного бизнеса с выстроенной структурой логистики, коммерции, обучения и IT сопровождения.
+              p За время нашей работы нашими клиентами стали более 7000 салонов красоты, частных парикмахеров и косметологов, находящихся в Москве, московской области и в 15 регионах России.
+              p Наших клиентов объединяет одно, желание расти и развиваться, а наша задача сделать их бизнес более простым и прибыльным.
+              p Приобретая товары у нас, вы можете быть уверены в их качестве. Мы работаем напрямую с такими производителями как L`Oreal Professionnel, MATRIX, KERASTASE, REDKEN, JANSSEN, и многими другими мировыми брендами...
+        .row.instagram-link-blocks
+          .col-12.col-md-4
+            a.instagram-link-block(href="#")
+              span.title Для парикмахеров
+              span.ac
+                i.base-icon-instagram
+                span stalker_consulting
+          .col-12.col-md-4
+            a.instagram-link-block(href="#")
+              span.title Для косметологов
+              span.ac
+                i.base-icon-instagram
+                span stalker_cosmetolog
+          .col-12.col-md-4
+            a.instagram-link-block(href="#")
+              span.title O.P.I Россия
+              span.ac
+                i.base-icon-instagram
+                span opirussia
+                
+

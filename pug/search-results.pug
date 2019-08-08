@@ -1,0 +1,88 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Результаты поиска',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Результаты поиска
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Результаты поиска
+      .content-block-with-sidebar.row
+        .col-12.col-lg-3
+          .catalog-filter
+            -
+              var array = [
+                {h: 'Увлажнение и восстановление', n: '5'},
+                {h: 'Дезодоранты', n: '52  '},
+                {h: 'Уход за ногами', n: '1'},
+                {h: 'Уход за руками', n: '3'},
+                {h: 'Женская гигиена', n: '10'},
+                {h: 'Контрацепция', n: '1'},
+                {h: 'Средства от летающих насекомых', n: '2'},
+                {h: 'Эпиляция', n: '3'},
+              ]
+            each i, index in array
+              .input-box
+                input(type="checkbox", name="filter_checkbox"+index id="filter_checkbox"+index)
+                label(for="filter_checkbox"+index)
+                  span= i.h
+                    em= i.n
+        .col
+          .catalog-items.row
+            - n = 0;
+            while n < 16
+              - n++;
+              .catalog-item.col-12.col-sm-6.col-md-4.col-lg-3
+                .wrap
+                  .sku AS40100
+                  .image
+                    a(href="#")
+                      img(src="images/prod-thumb.jpg" alt="Лак стойкой фиксации с эффектом памяти \"Strong Touch\" 490")
+                  a(href="#").name Лак стойкой фиксации с эффектом памяти "Strong Touch" 490
+                  .stock 1 280 шт.
+                  .stickers
+                    .s-item.sale Уценка
+                    .s-item.new NEW
+                    .s-item.percent %
+                  .cart-d
+                    .quantity-block
+                      .b.minus.base-icon-minus
+                      input.input(type="number" value="0" min="0" max="10")
+                      .b.plus.base-icon-plus
+                    .price-block
+                      .price 1 834 ₽
+                      .sub-price 0 ₽
+                  .price-details
+                    .pd-item
+                      .label Розница
+                      .price
+                        .old 2 534
+                        span 1 834 ₽
+                    .pd-item
+                      .label Опт (от 3)
+                      .price
+                        .old 1 834
+                        span 1 650 ₽
+                    .pd-item
+                      .label Специалистам
+                      .price
+                        a(href="#") Узнать
+          .pagination
+            a(href="#") 1
+            span 2
+            a(href="#") 3
+
+

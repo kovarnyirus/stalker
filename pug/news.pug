@@ -1,0 +1,47 @@
+extends templates/layout.pug
+
+block vars
+  -
+    var
+      title = 'Новости',
+      logged = true;
+
+block content
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Новости
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить
+      .heading-block
+        h1.h.h4 Новости
+      .blog-items.row
+        -
+          var array = [
+            {h: 'Конгресс Барселона Октябрь 2019'},
+            {h: 'Redken Новинки Стайлинга'},
+            {h: 'Инструкция По Оплате Через Сбербанк Онлайн'},
+            {h: 'Новинка В Продаже Полинуклеотиды Plines'},
+            {h: 'Новинка Карбоновый Пилинг Уже В Продаже'},
+            {h: 'Redken Brews Для Мужчин'},
+          ]
+        each i, index in array
+          .col-12.col-sm-6.col-md-4
+            .blog-item
+              .content
+                .date 15.05.2019
+                a(href="#").title=i.h
+              .img(style="background-image: url(images/post"+(index+1)+".jpg)")
+                a(href="#")
+      .pagination
+        a(href="#") 1
+        span 2
+        a(href="#") 3
+
+
+

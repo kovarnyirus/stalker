@@ -1,0 +1,69 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Обратная Связь',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Обратная Связь
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Обратная Связь
+      .content-block-with-sidebar.row
+        .col-12.col-sm-4
+          ul.links-menu
+            li.current-menu-item
+              a(href="#") Активные обращения
+            li
+              a(href="#") Архив обращений
+        .col
+          .heading-block.with-button
+            h5.h Обращения в поддержку
+            a.add-link(href="#")
+              i.base-icon-plus
+              span Новое обращение
+          -
+            var array = [
+              {h: 'Заголовок вопроса в одну две строки для наглдяности...', c:'', a: true},
+              {h: 'Заголовок вопроса в одну две строки для наглдяности...', c:'', a: false},
+              {h: 'Заголовок вопроса в одну две строки для наглдяности<br>не сокращенный троеточием', c:'active', a: false},
+            ]
+          each i, index in array
+            .feedback-request(class=i.c)
+              .question
+                .top
+                  .number №4669#{index}
+                  .text!= i.h
+                  if i.a
+                    .new-actions
+              - style = '';
+              if i.c == 'active'
+                - style = 'display: block;'
+              .drop-block(style=style)
+                .question-text
+                  p Не представляю свой ежедневный макияж без использования туши для ресниц, некоторые девушки могут не использовать больше ничего, только тушь для легкого, ежедневного макияжа.
+                  p Я стараюсь выбирать именно такие туши, которые удлиняют реснички, а еще лучше. чтобы была такая привлекательная пометка, как "с эффектом накладных ресниц", в таком случае я обязательно делаю выбор именно в ее пользу.
+                .message-item
+                  .name Менеджер Виктория
+                  .text Не представляю свой ежедневный макияж без использования туши для ресниц, некоторые девушки могут не использовать больше ничего, только тушь для легкого, ежедневного макияжа.
+                .reply-form
+                  button.resolved-button.button-style3.small.variant2 Ваш<br>ответ
+                  .inputs
+                    input.input(type="text" placeholder="Ваш ответ")
+                    input.button-style3.small(type="submit", value="Отправить")
+                    // Если собщение отправлено к "reply-form" класс "sended"
+                    .success Спасибо, Ваше обращение отправлено.
+                      a(href="#").button-style3.small.close
+                        i.base-icon-cross
+

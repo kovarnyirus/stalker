@@ -1,0 +1,45 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Акции',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Акции
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Акции
+      .sale-items.row
+        -
+          var array = [
+            {h: 'При заказе Janssen Inspira Martinex шампанское в подарок'},
+            {h: 'Акция ВИСКОДЕРМ'},
+            {h: 'Скидка 20% при покупке от 2-х препаратов одного наименования JALUPRO'},
+            {h: 'При покупке 2-х и более филлеров марки YVOIRE скидка 10%'},
+          ]
+        each i, index in array
+          .col-12.col-sm-6
+            .item
+              .img(style="background-image: url(images/post"+(index+1)+".jpg)")
+                a(href="#")
+              .content
+                .date 15.05.2019
+                a(href="#").title=i.h
+      .pagination
+        a(href="#") 1
+        span 2
+        a(href="#") 3
+
+
+

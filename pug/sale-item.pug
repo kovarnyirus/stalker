@@ -1,0 +1,36 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Акции',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Акции
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 При покупке 2-х флаконов Ботулакса 2 маски APRILINE в подарок
+        .post-date 15.05.2019
+      .post-content
+        .row
+          .col
+            img(src="images/img-post3.jpg")
+          .col-12.col-sm-5.col-md-4
+            p Если вы уже являетесь нашим клиентом, то вам на эл. почту будет отправлен логин и пароль для входа в личный кабинет.
+            p Если Вы новый клиент, при заполнении заявки на регистрацию, в поле краткий комментарий укажите интересующие Вас марки. В течение рабочего дня, с Вами свяжется наш оператор для обсуждения условий сотрудничества.
+
+
+
+
+
+

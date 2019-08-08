@@ -1,0 +1,70 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Личный кабинет',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Личный кабинет
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Личный кабинет
+      .content-block-with-sidebar.row
+        .col-12.col-lg-4
+          .site-message-block
+            i.base-icon-warning
+            div
+              | Уважаемый покупатель! Для того, чтобы оформить заказ, Вам необходимо 
+              a(href="#") авторизоваться 
+              | или 
+              a(href="#") зарегистрироваться
+              |. 
+        .col
+          .heading-block
+            h5.h Заказ
+          .cart-table.flex-table
+            .flex-table-head
+              .ct-num.flex-table-th №
+              .ct-sku.flex-table-th Артикул
+              .ct-name.flex-table-th Наименование
+              .ct-count.flex-table-th Кол-во
+              .ct-total.flex-table-th Итого
+              .ct-remove.flex-table-th
+            .flex-table-body
+              - n = 0;
+              while n < 4
+                -n++;
+                .flex-table-row
+                  .ct-num.flex-table-td= n
+                  .ct-sku.flex-table-td 7293720414018
+                  .ct-name.flex-table-td
+                    a(href="#")
+                      span.img(style="background-image: url(images/prod-thumb.jpg)")
+                      span.title Blond кондиционер для осветленных волос 250 мл
+                  .ct-count.flex-table-td
+                    .quantity-block
+                      .b.minus.base-icon-minus
+                      input.input(type="number" value="1" min="1" max="10")
+                      .b.plus.base-icon-plus
+                  .ct-price.flex-table-td 1 256 р
+                  .ct-total.flex-table-td 122 256 р
+                  .ct-remove.flex-table-td
+                    a(href="#").base-icon-cross
+          .order-totals
+            .bonus-size
+              span Всего баллов: 
+              | 756
+            .total
+              | итого:
+              strong 122 256 р

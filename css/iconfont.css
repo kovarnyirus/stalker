@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "base-icon";
+  src: url("../fonts/base-icon.eot");
+  src: url("../fonts/base-icon.eot?#iefix") format("eot"), url("../fonts/base-icon.woff2") format("woff2"), url("../fonts/base-icon.woff") format("woff"), url("../fonts/base-icon.ttf") format("truetype"), url("../fonts/base-icon.svg#base-icon") format("svg");
+}
+
+[class*="base-icon-"],
+[class^="base-icon-"] {
+  font-family: "base-icon";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+  text-decoration: none;
+  text-transform: none;
+}
+
+.base-icon-calendar:before {
+  content: "\E001";
+}
+
+.base-icon-cart:before {
+  content: "\E002";
+}
+
+.base-icon-check:before {
+  content: "\E003";
+}
+
+.base-icon-close:before {
+  content: "\E004";
+}
+
+.base-icon-cross:before {
+  content: "\E005";
+}
+
+.base-icon-doc:before {
+  content: "\E006";
+}
+
+.base-icon-down:before {
+  content: "\E007";
+}
+
+.base-icon-filter:before {
+  content: "\E008";
+}
+
+.base-icon-grid:before {
+  content: "\E009";
+}
+
+.base-icon-instagram:before {
+  content: "\E00A";
+}
+
+.base-icon-mail:before {
+  content: "\E00B";
+}
+
+.base-icon-minus:before {
+  content: "\E00C";
+}
+
+.base-icon-next:before {
+  content: "\E00D";
+}
+
+.base-icon-phone:before {
+  content: "\E00E";
+}
+
+.base-icon-placeholder:before {
+  content: "\E00F";
+}
+
+.base-icon-plus:before {
+  content: "\E010";
+}
+
+.base-icon-prev:before {
+  content: "\E011";
+}
+
+.base-icon-row:before {
+  content: "\E012";
+}
+
+.base-icon-search:before {
+  content: "\E013";
+}
+
+.base-icon-star:before {
+  content: "\E014";
+}
+
+.base-icon-up:before {
+  content: "\E015";
+}
+
+.base-icon-warning:before {
+  content: "\E016";
+}
+
+.base-icon-xls-file:before {
+  content: "\E017";
+}

@@ -1,0 +1,33 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'ВЕ COLOR 12 MINUTE обучающий семинар 24 мая г. Королёв.',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span ВЕ COLOR 12 MINUTE обучающий семинар 24 мая г. Королёв.
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 ВЕ COLOR 12 MINUTE обучающий семинар 24 мая г. Королёв.
+      .post-content
+        img.align-center(src="images/img-seminar1.jpg", alt="")
+        .free-space(style="height: 75px")
+        img.align-center(src="images/img-seminar2.jpg", alt="")
+        .free-space(style="height: 75px")
+        img.align-center(src="images/img-seminar3.jpg", alt="")
+      
+
+
+
+

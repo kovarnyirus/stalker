@@ -1,0 +1,106 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Главная';
+
+block content
+  .main-container
+    .container
+      p Dolor vitae error et dolorum deserunt rerum non. Nam quis id delectus voluptas sint dolores et suscipit pariatur. Iste veritatis aut quis quae soluta. Qui alias earum earum deleniti sunt ut cumque. Iste est architecto. Molestiae temporibus assumenda consectetur occaecati quisquam.
+      p Corporis vitae delectus quia dolores excepturi id doloremque. Sit eligendi ut esse amet perspiciatis qui magnam est. Totam quidem et ipsa quos. Sed ab et in quo aut culpa minima voluptas.
+      p Modi incidunt quo ab. Recusandae facere doloremque. Vero soluta maiores quia consequatur eos in temporibus enim. Et perspiciatis et reprehenderit esse soluta vel. Harum quaerat dicta natus. Sed consequatur pariatur.
+  
+
+  // Попап формы
+
+  // Для того что бы отобразить форму, к "popup-block" добавить класс "show-popup"
+
+  // Форма Авторизации
+  .auth-popup-form.popup-block.show-popup
+    .popup-overlay
+    form.popup-wrap
+      .close.base-icon-cross
+      h5.h Авторизация
+      .text-t1 Введите Ваши данные для входа
+      .input-row
+        label Логин
+        input.style1
+      .input-row
+        label Пароль
+        input.style1
+      a(href="#").remember-link Забыли пароль?
+      input.button-style3(type="submit" value="Войти")
+      .reg-link
+        | Нет аккаунта? 
+        a(href="#") Зарегистрироваться
+
+  // 
+    Форма Авторизации с ошибками
+    Просто к "input-row" добавляем класс "with-error" и в input прописываем аттрибут placeholder с текстом ошибки
+  .auth-popup.popup-block
+    .popup-overlay
+    form.popup-wrap
+      .close.base-icon-cross
+      h5.h Авторизация
+      .text-t1 Введите Ваши данные для входа
+      .input-row.with-error
+        label Логин
+        input.style1(placeholder="Неверный логин")
+      .input-row.with-error
+        label Пароль
+        input.style1(placeholder="Неверный пароль")
+      a(href="#").remember-link Забыли пароль?
+      input.button-style3(type="submit" value="Войти")
+      .reg-link
+        | Нет аккаунта? 
+        a(href="#") Зарегистрироваться
+
+  // Подтверждение заказа
+  .confirm-order-popoup.popup-block
+    .popup-overlay
+    form.popup-wrap
+      .close.base-icon-cross
+      h5.h Требуется<br>подтверждение заказа
+      .input-row
+        label Комментарий
+        textarea.style1
+      input.button-style3(type="submit" value="Подтвердить")
+
+  // Описание бренда
+  .brand-details-popoup.popup-block
+    .popup-overlay
+    .popup-wrap
+      .close.base-icon-cross
+      h5.h LONDA
+      .text-t2 Londa — одна из самых известных фирм-производителей средств по уходу за волосами. Сегодня продукцию компании можно приобрести более чем в 150 странах, а палитра красок для волос Londa Professional насчитывает более 100 оттенков
+      .bottom
+        .link
+          a.button-style3
+            span Подробнее
+        .logo
+          a(href="#")
+            img(src="images/brand1.jpg", alt="LONDA")
+            
+  // Обращение в тех поддкржку
+  .support-message-popoup.popup-block
+    .popup-overlay
+    form.popup-wrap
+      .close.base-icon-cross
+      h5.h Новое обращение
+      .input-row
+        label Заголовок обращения 
+        input.style1
+      .input-row
+        label Опишите ваш вопрос ращвернуто
+        textarea.style1
+      input.button-style3(type="submit" value="Подтвердить")
+
+  // Описание курса
+  .course-details-popoup.popup-block
+    .popup-overlay
+    .popup-wrap
+      .close.base-icon-cross
+      h5.h Сейчас проходит обучение:
+      .text-t2 Описание курса который проходит в данный момент и что можно сделать чтобы в нем поучавствовать

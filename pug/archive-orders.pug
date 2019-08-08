@@ -1,0 +1,137 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Личный кабинет',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Личный кабинет
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Личный кабинет
+      .content-block-with-sidebar.row
+        .col-12.col-lg-4
+          ul.links-menu
+            li
+              a(href="#") Личные данные
+            li
+              a(href="#") Текущий заказ
+            li
+              a(href="#") Архив заказов
+            li
+              a(href="#") Обратная связь
+          .account-details-block
+            -
+              var array = [
+                {h: 'Ваш регион:', d:'Москва'},
+                {h: 'Дни доставки:', d:'пн,вт,чт'},
+                {h: 'Дни доставки:', d:'Доставка заказов осуществляется по графику: понедельник, вторник, четверг. Заказы отправленные до 17.00, доставляются на следующий день. Заказы отправленные после 17.00, доставляются через день, в соответствии с графиком доставки.'},
+                {h: 'На вашем счету:', d:'733 балла '},
+              ]
+            each i in array
+              .item
+                .label= i.h
+                .value= i.d
+        .col
+          .heading-block
+            h5.h Архив заказов
+          .archive-order-table.flex-table
+            .flex-table-head
+              .aot-num.flex-table-th №
+              .aot-id.flex-table-th ID
+              .aot-date.flex-table-th Дата
+              .aot-total.flex-table-th Итого
+              .aot-status.flex-table-th Статус
+            .flex-table-body
+              // Order Item
+              .flex-table-row
+                .aot-num.flex-table-td 1
+                .aot-id.flex-table-td 69937
+                .aot-date.flex-table-td
+                  | Заказ от 20.05.2019, 4 позиции
+                  .pay-t Безналичная оплата
+                .aot-total.flex-table-td 1 021 256 р
+                .aot-status.flex-table-td.text-yellow Принят
+              // -- Order details
+              .order-details-table.flex-table
+                .flex-table-head.style2
+                  .odt-num.flex-table-th №
+                  .odt-sku.flex-table-th Апт
+                  .odt-name.flex-table-th Наименование
+                  .odt-count.flex-table-th Кол-во
+                  .odt-price.flex-table-th Цена
+                  .odt-total.flex-table-th Сумма
+                .flex-table-body
+                  - n = 0;
+                  while n < 4
+                    -n++;
+                    .flex-table-row
+                      .odt-num.flex-table-td= n
+                      .odt-sku.flex-table-td 7293720414018
+                      .odt-name.flex-table-td Blond кондиционер для осветленных волос 250 мл
+                      .odt-count.flex-table-td 23
+                      .odt-price.flex-table-td 1 256 р
+                      .odt-total.flex-table-td 122 256 р
+                .bottom-buttons.on-right
+                  a.button-style2.blue(href="#") Оплатить
+                  a.button-style2.blue.variant2(href="#") Повторить
+              // -- END Order details
+              // END Order Item
+              - n = 1;
+              while n < 4
+                -n++;
+                // Order Item
+                .flex-table-row
+                  .aot-num.flex-table-td= n
+                  .aot-id.flex-table-td 69937
+                  .aot-date.flex-table-td
+                    | Заказ от 20.05.2019, 4 позиции
+                    .pay-t Безналичная оплата
+                  .aot-total.flex-table-td 1 021 256 р
+                  .aot-status.flex-table-td.text-green Отправлен
+                // -- Order details
+                .order-details-table.flex-table
+                  .flex-table-head.style2
+                    .odt-num.flex-table-th №
+                    .odt-sku.flex-table-th Апт
+                    .odt-name.flex-table-th Наименование
+                    .odt-count.flex-table-th Кол-во
+                    .odt-price.flex-table-th Цена
+                    .odt-total.flex-table-th Сумма
+                  .flex-table-body
+                    - nc = 0;
+                    while nc < 4
+                      -nc++;
+                      .flex-table-row
+                        .odt-num.flex-table-td= nc
+                        .odt-sku.flex-table-td 7293720414018
+                        .odt-name.flex-table-td Blond кондиционер для осветленных волос 250 мл
+                        .odt-count.flex-table-td 23
+                        .odt-price.flex-table-td 1 256 р
+                        .odt-total.flex-table-td 122 256 р
+                  .bottom-buttons.on-right
+                    a.button-style2.blue(href="#") Оплатить
+                    a.button-style2.blue.variant2(href="#") Повторить
+                // -- END Order details
+                // END Order Item
+
+
+
+
+
+
+
+
+
+                

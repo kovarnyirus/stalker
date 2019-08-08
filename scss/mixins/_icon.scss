@@ -1,0 +1,12 @@
+@mixin icon($icon, $font-family: 'base-icons') {
+  content: "#{$icon}";
+  font-family: "#{$font-family}";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: none;
+}

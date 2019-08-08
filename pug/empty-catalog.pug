@@ -1,0 +1,199 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Каталог продукции',
+      logged = true; 
+
+block content 
+  main.main-container
+    .container
+      .page-top
+        .breadcrumbs
+          a(href="#") Главная
+          span.sep >
+          span Каталог продукции
+        .order-total-info
+          span Текущий заказ:
+          strong 105 924  ₽
+          a(href="#") оформить 
+      .heading-block
+        h1.h.h4 Каталог продукции
+      .content-block-with-sidebar.row
+        .col-12.col-sm-4.col-md-3
+          .catalog-filter
+            .row-item
+              .title Цена
+                i.base-icon-down
+              .drop-block
+                .price-filter-block
+                  input.range-slider(type="text" data-min="1200" data-max="39000" data-from="4300" data-to="25000" data-step="100")
+                  .inputs
+                    input(type="number" min="1200" max="39000" value="1300").input.style1.from
+                    input(type="number" min="1200" max="39000" value="25000").input.style1.to
+            .row-item
+              .title Бренды
+                i.base-icon-down
+              .drop-block
+                .scrollbar-inner
+                  ul.filter-menu
+                    -
+                      var array = [
+                        {h: 'Alerana(0%)'},
+                        {h: 'Always(4%)'},
+                        {h: 'American Crew(10%)'},
+                        {h: 'Assistant Professional(2%)', c: true},
+                        {h: 'Babyliss(4%)'},
+                        {h: 'Batiste(15%)'},
+                        {h: 'Be Hair(15%)'},
+                        {h: 'Beautyblender(1%)'},
+                      ],
+                      array2 = [
+                        {h: 'Уход за раздраженной и поврежденной кожей'},
+                        {h: 'Увлажнение и восстановление кожи'},
+                        {h: 'Дезодоранты'},
+                        {h: 'Уход за ногами'},
+                        {h: 'Уход за руками'},
+                        {h: 'Женская гигиена'},
+                        {h: 'Контрацепция'},
+                        {h: 'Средства от летающих насекомых'},
+                        {h: 'Эпиляция'},
+                      ]
+                    each i, index in array
+                      - 
+                        css_class = '',
+                        style = ''
+                      if i.c
+                        -
+                          css_class = 'active';
+                          style = 'display: block;'
+                      li(class=css_class)
+                        a(href="#")= i.h
+                        ul.sub-menu(style=style)
+                          li.price-link
+                            a(href="#").download-price-link
+                              i.base-icon-xls-file
+                              span Скачать прайс-лист по бренду
+                          each i2, index2 in array2
+                            li
+                              .input-box
+                                input(type="checkbox", name="filter"+index+index2 id="filter"+index+index2)
+                                label(for="filter"+index+index2)
+                                  span= i2.h
+            .row-item
+              .title Назначение
+                i.base-icon-down
+              .drop-block
+                .scrollbar-inner
+                  -
+                    var array = [
+                      {h: 'Уход за раздраженной и поврежденной кожей'},
+                      {h: 'Увлажнение и восстановление кожи'},
+                      {h: 'Дезодоранты'},
+                      {h: 'Уход за ногами'},
+                      {h: 'Уход за руками'},
+                      {h: 'Женская гигиена'},
+                      {h: 'Контрацепция'},
+                      {h: 'Средства от летающих насекомых'},
+                      {h: 'Эпиляция'},
+                    ]
+                  each i, index in array
+                    .input-box
+                      input(type="radio", name="filter_radio" id="filter_radio"+index)
+                      label(for="filter_radio"+index)
+                        span= i.h
+            .row-item
+              .title Вид продукции
+                i.base-icon-down
+              .drop-block
+                .scrollbar-inner
+                  -
+                    var array = [
+                      {h: 'Уход за раздраженной и поврежденной кожей'},
+                      {h: 'Увлажнение и восстановление кожи'},
+                      {h: 'Дезодоранты'},
+                      {h: 'Уход за ногами'},
+                      {h: 'Уход за руками'},
+                      {h: 'Женская гигиена'},
+                      {h: 'Контрацепция'},
+                      {h: 'Средства от летающих насекомых'},
+                      {h: 'Эпиляция'},
+                    ]
+                  each i, index in array
+                    .input-box
+                      input(type="checkbox", name="filter_checkbox"+index id="filter_checkbox"+index)
+                      label(for="filter_checkbox"+index)
+                        span= i.h
+        .col
+          .catalog-top
+            .sort-label Сортировка:
+            //
+              Добавить класс к "sort-direction" при:
+                asc - по возрастанию
+                desc - по убыванию
+            .sort-direction.asc
+            .cat-sort
+              .label 
+                span Цена
+                i.base-icon-down
+              .dropdown
+                .item.current
+                  a(href="#") Цена
+                .item
+                  a(href="#") Бренд
+                .item
+                  a(href="#") Название
+                .item
+                  a(href="#") Скидка
+            .cat-sort
+              .label 
+                span Наличие
+                i.base-icon-down
+              .dropdown
+                .item.current
+                  a(href="#") Наличие
+                .item
+                  a(href="#") Наличие
+                .item
+                  a(href="#") Наличие
+                .item
+                  a(href="#") Наличие
+            .a-select
+              .label 
+                span Все категории
+                i.base-icon-down
+              .dropdown
+                .item
+                  a(href="#")
+                    | Ухаживающая Серия
+                    em 15
+                .item
+                  a(href="#")
+                    | Востанавливающая Серия
+                    em 15
+                .item
+                  a(href="#")
+                    | Питающая Серия
+                    em 15
+                .item
+                  a(href="#")
+                    | Вторая Серия
+                    em 15
+                .item.special
+                  a(href="#")
+                    | Еще Какой То Раздел
+                    em 15
+            .search-form.type2
+              input(type="text" placeholder="Введите поисковый запрос").input
+              button.submit.base-icon-search
+            .catalog-view-swich
+              .catalog-t-grid.active
+                i.base-icon-grid
+              .catalog-t-row
+                i.base-icon-row
+          .empty-catalog-message
+            .heading-block
+              h5.h Данная группа товаров пуста
+            p Для уточнения информации свяжитесь с нашими специалистами по телефону 
+              strong 8 495 739 07 80

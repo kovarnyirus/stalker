@@ -1,0 +1,288 @@
+@mixin no-click() {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin pos-r() {
+  position: relative;
+  display: block;
+}
+
+@mixin pos-a() {
+  position: absolute;
+  display: block;
+}
+
+.irs {
+  @include pos-r();
+  -webkit-touch-callout: none;
+  @include no-click();
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+
+  &-line {
+    @include pos-r();
+    overflow: hidden;
+    outline: none !important;
+  }
+
+  &-bar {
+    @include pos-a();
+    left: 0;
+    width: 0;
+  }
+
+  &-shadow {
+    position: absolute;
+    display: none;
+    left: 0;
+    width: 0;
+  }
+
+  &-handle {
+    @include pos-a();
+    box-sizing: border-box;
+    cursor: default;
+    z-index: 1;
+
+    &.single,
+    &.from,
+    &.to {}
+
+    &.type_last {
+      z-index: 2;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+    }
+  }
+
+  &-min,
+  &-max {
+    @include pos-a();
+    cursor: default;
+  }
+
+  &-min {
+    left: 0;
+  }
+
+  &-max {
+    right: 0;
+  }
+
+  &-from,
+  &-to,
+  &-single {
+    @include pos-a();
+    top: 0;
+    left: 0;
+    cursor: default;
+    white-space: nowrap;
+  }
+
+  &-grid {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+
+    .irs-with-grid & {
+      display: block;
+    }
+
+    &-pol {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 8px;
+      background: #000;
+
+      &.small {
+        height: 4px;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      white-space: nowrap;
+      text-align: center;
+      font-size: 9px;
+      line-height: 9px;
+      padding: 0 3px;
+      color: #000;
+    }
+  }
+
+  &-disable-mask {
+    @include pos-a();
+    top: 0;
+    left: -1%;
+    width: 102%;
+    height: 100%;
+    cursor: default;
+    background: rgba(0, 0, 0, 0.0);
+    z-index: 2;
+
+    .lt-ie9 & {
+      background: #000;
+      filter: alpha(opacity=0);
+      cursor: not-allowed;
+    }
+  }
+
+  &-disabled {
+    opacity: 0.4;
+  }
+
+  &-hidden-input {
+    position: absolute !important;
+    display: block !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    outline: none !important;
+    z-index: -9999 !important;
+    background: none !important;
+    border-style: solid !important;
+    border-color: transparent !important;
+  }
+}
+
+.irs--round {
+  $name: irs;
+
+  $top: 0;
+  $bottom: 0;
+  $line_height: 5px;
+  $handle_width: 14px;
+  $handle_height: 14px;
+
+  $line_color: #C4C4C4;
+  $bar_color: #E53131;
+  $handle_color_1: #E53131;
+  $handle_color_2: white;
+  $handle_color_3: #2394E6;
+  $minmax_text_color: #333;
+  $minmax_bg_color: rgba(0, 0, 0, 0.1);
+  $label_color_1: #E53131;
+  $label_color_2: white;
+  $grid_color_1: #dedede;
+  $grid_color_2: silver;
+
+  height: 15px;
+  margin: 15px 0;
+
+  &.irs-with-grid {
+    height: 65px;
+  }
+
+  .#{$name}-line {
+    top: $top;
+    height: $line_height;
+    background-color: $line_color;
+    border-radius: $line_height;
+  }
+
+  .#{$name}-bar {
+    top: $top;
+    height: $line_height;
+    background-color: $bar_color;
+
+    &--single {
+      border-radius: $line_height 0 0 $line_height;
+    }
+  }
+
+  .#{$name}-shadow {
+    height: 4px;
+    bottom: $bottom;
+    background-color: fade($line_color, 50%);
+  }
+
+  .#{$name}-handle {
+    top: -5px;
+    width: $handle_width;
+    height: $handle_height;
+    background: $handle_color_1;
+    border-radius: $handle_width;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background 400ms ease-in-out;
+
+    &.state_hover,
+    &:hover {
+      background-color: $handle_color_3;
+    }
+  }
+
+  .#{$name}-min,
+  .#{$name}-max {
+    color: $minmax_text_color;
+    font-size: 14px;
+    line-height: 1;
+    top: 0;
+    padding: 3px 5px;
+    background-color: $minmax_bg_color;
+    border-radius: $line_height;
+  }
+
+  .#{$name}-from,
+  .#{$name}-to,
+  .#{$name}-single {
+    font-size: 14px;
+    line-height: 1;
+    text-shadow: none;
+    padding: 3px 5px;
+    background-color: $label_color_1;
+    color: $label_color_2;
+    border-radius: $line_height;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      bottom: -6px;
+      left: 50%;
+      width: 0;
+      height: 0;
+      margin-left: -3px;
+      overflow: hidden;
+      border: 3px solid transparent;
+      border-top-color: $label_color_1;
+    }
+  }
+
+  .#{$name}-grid {
+    height: 25px;
+
+    &-pol {
+      background-color: $grid_color_1;
+    }
+
+    &-text {
+      color: $grid_color_2;
+      font-size: 13px;
+    }
+  }
+}
