@@ -9,8 +9,8 @@ include ../mixins/_navigation.pug
 
 //- Variables
 
-- 
-  var 
+-
+  var
     logged = false,
     header_space = false
 
@@ -158,7 +158,7 @@ html(lang="ru")
                   i.base-icon-cart
                   if logged
                     .inner
-                      .label Александр В. 
+                      .label Александр В.
                       .total Заказ на 18 600 р.
                   else
                     .inner
@@ -183,7 +183,7 @@ html(lang="ru")
                 .swiper-container
                   .swiper-wrapper
                     -
-                      var array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','Y','А','Б','Г','З','К','Л','М','О','С','Т','Х','Ш','0-9'] 
+                      var array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','Y','А','Б','Г','З','К','Л','М','О','С','Т','Х','Ш','0-9']
                     each i in array
                       .swiper-slide= i
         .mobile-header
@@ -225,7 +225,7 @@ html(lang="ru")
               .swiper-container
                 .swiper-wrapper
                   -
-                    var array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','Y','А','Б','Г','З','К','Л','М','О','С','Т','Х','Ш','0-9'] 
+                    var array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','Y','А','Б','Г','З','К','Л','М','О','С','Т','Х','Ш','0-9']
                   each i in array
                     .swiper-slide= i
           .mh-side
@@ -385,7 +385,7 @@ html(lang="ru")
       block footer
         .cookie-popup-block.cookie-hide
           .container
-            p Мы используем файлы cookie и сбор персональных данных, чтобы предоставить вам лучший пользовательский сервис и показывать вам индивидуальные предложения на нашем сайте. Продолжая просматривать наш веб-сайт, вы соглашаетесь c использованием cookie и обработкой персональных данных. 
+            p Мы используем файлы cookie и сбор персональных данных, чтобы предоставить вам лучший пользовательский сервис и показывать вам индивидуальные предложения на нашем сайте. Продолжая просматривать наш веб-сайт, вы соглашаетесь c использованием cookie и обработкой персональных данных.
               a(href="#") Узнать больше
             .close.base-icon-close
         footer.site-footer(class=footer)
@@ -418,23 +418,23 @@ html(lang="ru")
                 .contact-rows
                   .contact-row
                     .l Служба клиентов (г. Москва)
-                    .v 
+                    .v
                       a(href="tel: 84957390780") 8 (495) 739 07 80
                       span  доб. 127
                   .contact-row
                     .l Служба клиентов (Московская Область)
-                    .v 
+                    .v
                       a(href="tel: 84957390780") 8 (495) 739 07 80
                       span  доб. 436, 464, 219, 129, 106, 529
                   .contact-row
                     .l Служба клиентов (Регионы)
-                    .v 
+                    .v
                       a(href="tel: 84957390780") 8 (495) 739 07 80
                       span  доб. 124, 102
                 .contact-item
                   i.base-icon-mail
                   span info-stalker@mirlk.ru
-          
+
       //- END Site Footer
 
       block scripts
