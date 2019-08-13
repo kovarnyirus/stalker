@@ -1,10 +1,17 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  .link-site
+    div Старый сайт.
+      a.link-site__link(href='#')  Перейти
+  <br>
+  .link-site
+    div Попробуйте наш новый сайт.
+      a.link-site__link(href='#')  Перейти
+  -
+    var
       title = 'Главная',
-      logged = false; 
+      logged = false;
 
 block content
   main.main-container
@@ -202,5 +209,5 @@ block content
               span.ac
                 i.base-icon-instagram
                 span opirussia
-                
+
 
