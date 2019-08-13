@@ -7708,6 +7708,12 @@ ol.style1 li:before {
   letter-spacing: 0.76em;
 }
 
+@media (min-width: 768px) {
+  .footer-logo {
+    padding-right: 20px;
+  }
+}
+
 /*
 - Footer Menu
 */

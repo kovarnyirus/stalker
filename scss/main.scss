@@ -2182,6 +2182,9 @@ ol.style1 {
     line-height: 11px;
     letter-spacing: 0.76em;
   }
+  @include media-breakpoint-up(md){
+    padding-right: 20px;
+  }
 }
 
 /*
