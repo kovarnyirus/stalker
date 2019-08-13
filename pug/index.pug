@@ -1,6 +1,12 @@
 extends templates/layout.pug
 
 block vars
+  -
+    var
+      title = 'Главная',
+      logged = false;
+
+block content
   .link-site
     div Старый сайт.
       a.link-site__link(href='#')  Перейти
@@ -8,12 +14,7 @@ block vars
   .link-site
     div Попробуйте наш новый сайт.
       a.link-site__link(href='#')  Перейти
-  -
-    var
-      title = 'Главная',
-      logged = false;
-
-block content
+  <br>
   main.main-container
     .container
       .slider-block.swiper-container
