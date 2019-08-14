@@ -1,12 +1,12 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  -
+    var
       title = 'Каталог продукции',
-      logged = true; 
+      logged = true;
 
-block content 
+block content
   main.main-container
     .container
       .page-top
@@ -17,7 +17,7 @@ block content
         .order-total-info
           span Текущий заказ:
           strong 105 924  ₽
-          a(href="#") оформить 
+          a(href="#") оформить
       .heading-block
         h1.h.h4 Каталог продукции
       .content-block-with-sidebar.row
@@ -61,7 +61,7 @@ block content
                         {h: 'Эпиляция'},
                       ]
                     each i, index in array
-                      - 
+                      -
                         css_class = '',
                         style = ''
                       if i.c
@@ -134,7 +134,7 @@ block content
                 desc - по убыванию
             .sort-direction.asc
             .cat-sort
-              .label 
+              .label
                 span Цена
                 i.base-icon-down
               .dropdown
@@ -147,7 +147,7 @@ block content
                 .item
                   a(href="#") Скидка
             .cat-sort
-              .label 
+              .label
                 span Наличие
                 i.base-icon-down
               .dropdown
@@ -160,7 +160,7 @@ block content
                 .item
                   a(href="#") Наличие
             .a-select
-              .label 
+              .label
                 span Все категории
                 i.base-icon-down
               .dropdown
@@ -195,5 +195,6 @@ block content
           .empty-catalog-message
             .heading-block
               h5.h Данная группа товаров пуста
-            p Для уточнения информации свяжитесь с нашими специалистами по телефону 
-              strong 8 495 739 07 80
+            p Для уточнения информации свяжитесь с нашими специалистами по телефону
+              strong
+                a(href='tel:+74957390780')  8 495 739 07 80

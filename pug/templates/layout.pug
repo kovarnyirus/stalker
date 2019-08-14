@@ -75,7 +75,7 @@ html(lang="ru")
                   img(src="images/logo.svg", alt="Сталкер-Консалтинг")
               .search-block
                 .search-form
-                  input(type="text").input
+                  input(type="text" placeholdet='Поиск по каталогу').input
                   button.submit.base-icon-search
                 // Чтобы показать результаты добавить к "search-result-popup" класс "show"
                 .search-result-popup
@@ -185,7 +185,8 @@ html(lang="ru")
                     -
                       var array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','Y','А','Б','Г','З','К','Л','М','О','С','Т','Х','Ш','0-9']
                     each i in array
-                      .swiper-slide= i
+                      .swiper-slide
+                        a.brand-navigation__link(href="#")= i
         .mobile-header
           .mh-top
             .container
@@ -392,10 +393,10 @@ html(lang="ru")
           .container
             .row
               .footer-col.col-12.col-md-4.col-lg-3
-                .footer-logo
+                .footer-logo.d-none.d-md-block
                   a(href="/")
                     img(src="images/logo.svg" alt="Сталкер-Консалтинг")
-                .copyright © ООО "МЛК Интернет технологии"
+                .copyright.d-none.d-md-block © ООО "МЛК Интернет технологии"
               .footer-col.col-12.col-sm
                 ul.footer-menu
                   li
@@ -408,7 +409,10 @@ html(lang="ru")
                     a(href="#") Контакты
                   li
                     a(href="#") Новости
-                a.dev(href="#")
+                .footer-logo.d-block.d-md-none
+                  a(href="/")
+                    img(src="images/logo.svg" alt="Сталкер-Консалтинг")
+                a.dev(href="#").d-none.d-md-block
                   span Разработано:
                   img(src="images/dev-logo.svg" alt="Metasharks")
                   span Metasharks
@@ -432,6 +436,14 @@ html(lang="ru")
                 .contact-item
                   i.base-icon-mail
                   span info-stalker@mirlk.ru
+                a.contact-item.strong.mt-3.d-block.d-md-none(href="#")
+                  i.base-icon-calendar
+                  span График доставки
+                .copyright.d-block.d-md-none.mt-3 © ООО "МЛК Интернет технологии"
+                a.dev(href="#").mt-3.d-block.d-md-none
+                  span Разработано:
+                  img(src="images/dev-logo.svg" alt="Metasharks")
+                  span Metasharks
 
       //- END Site Footer
 

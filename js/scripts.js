@@ -467,6 +467,20 @@ jQuery(document).ready(function () {
     }
   });
 
+
+    var $about_slider = jQuery('.about-slider');
+
+    $about_slider_swiper = new Swiper($about_slider.find('.swiper-container'), {
+        loop: true,
+        slidesPerView: 1,
+        navigation: {
+            nextEl: $about_slider.find('.next'),
+            prevEl: $about_slider.find('.prev'),
+        },
+        speed: 700
+    });
+
+
   /* Product Image Slider */
 
   var $product_images = jQuery('.product-images');

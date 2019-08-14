@@ -21,7 +21,7 @@ block content
 			.row.mb-5
 				.col-3
 					a(href='#')
-						img(src='' alt='logo')
+						img(src='images/schwarzkopf-logo.png' alt='logo')
 				.col-9
 					h3 Schwarzkopf
 					strong Schwarzkopf - бренд средств для волос, который уже на протяжении 120 лет является символом качественных и инновационных продуктов, разработанных совместно с профессионалами. Потребители доверяют средствам Schwarzkopf.
@@ -93,10 +93,42 @@ block content
 						// Tab О марке
 						.swiper-slide
 							.about-slider
+								.prev.base-icon-prev(role="button", aria-label="Next slide")
+								.next.base-icon-next(role="button", aria-label="Next slide")
 								.swiper-container
 									.swiper-wrapper
 										.swiper-slide
 											img.about-slider__img(src='images/about-slider.jpg')
+											.about-slider__footer
+											.row
+												.col-6
+													.about-slider__zoom Увеличить
+												.col-6
+													span
+														a.about-slider__download(href='#') Скачать презентацию
+
+										.swiper-slide
+											img.about-slider__img(src='images/about-slider.jpg')
+											.about-slider__footer
+											.row
+												.col-6
+													.about-slider__zoom Увеличить
+												.col-6
+													span
+														a.about-slider__download(href='#') Скачать презентацию
+
+										.swiper-slide
+											img.about-slider__img(src='images/about-slider.jpg')
+											.about-slider__footer
+											.row
+												.col-6
+													.about-slider__zoom Увеличить
+												.col-6
+													span
+													a.about-slider__download(href='#') Скачать презентацию
+
+
+
 
 
 
@@ -316,109 +348,6 @@ block content
 												a(href="#")
 						// END Tab Новости
 
-			.tabs
-				.tabs__caption
-					.tabs__btn.active: span Гаммы
-					.tabs__btn: span О марке
-					.tabs__btn: span Обучение
-					.tabs__btn: span Отзывы
-					.tabs__btn: span Новости
-				.tabs__list
-
-					.tabs__item.active
-						.gamma
-							.row
-								.col-3
-									.gamma__item
-										.gamma__img-wrapper
-											img.gamma__img(src='images/gamma1.jpg' alt='gamma_img')
-										.gamma__bottom
-											h5.gamma__title Уход за волосами всех типов
-											a.gamma__link(href='#') 30 Товаров
-
-								.col-3
-									.gamma__item
-										.gamma__img-wrapper
-											img.gamma__img(src='images/gamma2.jpg' alt='gamma_img')
-										.gamma__bottom
-											h5.gamma__title Мужская косметика
-											a.gamma__link(href='#') 30 Товаров
-
-								.col-3
-									.gamma__item
-										.gamma__img-wrapper
-											img.gamma__img(src='images/gamma3.jpg' alt='gamma_img')
-										.gamma__bottom
-											h5.gamma__title Косметика для кожи головы
-											a.gamma__link(href='#') 30 Товаров
-
-								.col-3
-									.gamma__item
-										.gamma__img-wrapper
-											img.gamma__img(src='images/gamma4.jpg' alt='gamma_img')
-										.gamma__bottom
-											h5.gamma__title Уход за длинными волосами
-											a.gamma__link(href='#') 30 Товаров
-								.col-12
-									a(href="#").button-style5.gamma__btn
-										span Показать еще 4
-
-					.tabs__item
-						.row
-							.col-12 sadasd
-					.tabs__item
-						//обучение
-						.heading-block.with-button
-							h4.h Обучение Schwarzkopf
-						.lesson-in-row-t2-items
-							.row
-								-
-									var array = [
-									{t: 'Визит в салоны красоты города ведущего тренера стилиста Cocochoco'},
-									{t: 'Мастерство свадебной прически от мастера Виктории Вагановой'},
-									]
-								each i, index in array
-									.col-6
-										.lesson-item
-											.img(style="background-image: url(images/course-item" + (index + 1) + ".jpg)")
-											.content
-												.top
-													.col-12
-														.title
-															a(href="#")= i.t
-													.col-12
-														.subtitle Ярославль
-															br
-															| 20 января
-												.bottom
-													.row
-														.col-12.bottom
-															.label Справки по телефону
-															.line
-														.col-12
-															.phone 8 910 113-72-20
-
-					.tabs__item
-						.row
-							.col-12 33333
-					.tabs__item
-						.heading-block
-							h1.h.h4 Новости Schwarzkopf
-						.blog-items.row
-							-
-								var array = [
-								{h: 'Конгресс Барселона Октябрь 2019'},
-								{h: 'Redken Новинки Стайлинга'},
-								{h: 'Инструкция По Оплате Через Сбербанк Онлайн'},
-								]
-							each i, index in array
-								.col-12.col-sm-6.col-md-4
-									.blog-item
-										.content
-											.date 15.05.2019
-											a(href="#").title=i.h
-										.img(style="background-image: url(images/post" + (index + 1) + ".jpg)")
-											a(href="#")
 
 			.heading-block
 				h1.h.h4 Продукция бренда
