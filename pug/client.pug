@@ -1,12 +1,12 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  -
+    var
       title = 'Клиентам',
-      logged = true; 
+      logged = true;
 
-block content 
+block content
   main.main-container
     .container
       .page-top
@@ -17,7 +17,7 @@ block content
         .order-total-info
           span Текущий заказ:
           strong 105 924  ₽
-          a(href="#") оформить 
+          a(href="#") оформить
       .heading-block
         h1.h.h4 Клиентам
       .client-row.row
@@ -56,9 +56,9 @@ block content
               a.item(href="#")= i.c
           .text-t2
             p
-              strong Доставка товара осуществляется бесплатно в соответствии с 
+              strong Доставка товара осуществляется бесплатно в соответствии с
                 a(href="#") графиком доставки.
-            p Минимальная сумма заказа – 
+            p Минимальная сумма заказа –
               strong 4000 руб
         .col.offset-lg-1
           .heading-block.tac.mt0
@@ -68,7 +68,7 @@ block content
               .products-list
                 h6.h Уход за волосами
                 .items
-                  - 
+                  -
                     var array = [
                       {t: 'Decleor'},
                       {t: 'Essie'},
@@ -147,9 +147,12 @@ block content
                               option Парикмахер
                               option Парикмахер
                               option Парикмахер
+                        .col-12.col-sm-6
+                          .input-row
+                            label Телефон
+                            input.style1(type='tel')
                         -
                           var array = [
-                            {h: 'Телефон', c: 'col-sm-6'},
                             {h: 'Фамилия *', c: 'col-sm-6'},
                             {h: 'Имя *', c: 'col-sm-6'},
                             {h: 'Отчество', c: 'col-sm-6'},
@@ -165,7 +168,7 @@ block content
                         .col-12.col-sm-6
                           .upload-input
                             .c
-                              .l Загрузить паспорт 
+                              .l Загрузить паспорт
                               .s 1 страница
                             label
                               input(type="file")
@@ -188,8 +191,8 @@ block content
                           .input-box
                             input(type="checkbox" id="lic")
                             label(for="lic")
-                              span 
-                                | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с 
+                              span
+                                | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с
                                 a(href="#") Условиями
                         .buttons.col-12.col-sm-6
                           .button
@@ -209,9 +212,12 @@ block content
                               option Парикмахер
                               option Парикмахер
                               option Парикмахер
+                        .col-12.col-sm-6
+                          .input-row
+                            label Телефон
+                            input.style1(type='tel')
                         -
                           var array = [
-                            {h: 'Телефон', c: 'col-sm-6'},
                             {h: 'Фамилия *', c: 'col-sm-6'},
                             {h: 'Название компании', c: 'col-sm-6'},
                             {h: 'Имя *', c: 'col-sm-6'},
@@ -229,7 +235,7 @@ block content
                         .col-12.col-sm-6
                           .upload-input
                             .c
-                              .l Загрузить паспорт 
+                              .l Загрузить паспорт
                               .s 1 страница
                             label
                               input(type="file")
@@ -252,8 +258,8 @@ block content
                           .input-box
                             input(type="checkbox" id="lic")
                             label(for="lic")
-                              span 
-                                | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с 
+                              span
+                                | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с
                                 a(href="#") Условиями
                         .buttons.col-12.col-sm-6
                           .button
@@ -274,7 +280,7 @@ block content
                   ul.style1
                     li Частный косметолог
                     li Магазин профессиональной косметики.
-                    
+
 
 
 

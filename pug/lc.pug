@@ -1,12 +1,12 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  -
+    var
       title = 'Личный кабинет',
-      logged = true; 
+      logged = true;
 
-block content 
+block content
   main.main-container
     .container
       .page-top
@@ -17,7 +17,7 @@ block content
         .order-total-info
           span Текущий заказ:
           strong 105 924  ₽
-          a(href="#") оформить 
+          a(href="#") оформить
       .heading-block
         h1.h.h4 Личный кабинет
       .content-block-with-sidebar.row
@@ -57,14 +57,20 @@ block content
                   {h: 'Фамилия', c: 'col-sm-6'},
                   {h: 'Почта', c: 'col-sm-6'},
                   {h: 'Имя', c: 'col-sm-6'},
-                  {h: 'Телефон', c: 'col-sm-6'},
-                  {h: 'Отчество', c: 'col-sm-6'},
                 ]
               each i in array
                 .col-12(class=i.c)
                   .input-row
                     label= i.h
                     input.style1
+              .col-12.col-sm-6
+                .input-row
+                  label Телефон
+                  input.style1(type='tel')
+              .col-12.col-sm-6
+                .input-row
+                  label Отчество
+                  input.style1
             .heading-block
               h5.h Компания и адрес
             .row
@@ -91,7 +97,7 @@ block content
             .heading-block
               h5.h Документы
             .document-item.row
-              .desc.col Тип документа (его название и загружаемое расширение например в pdf) 
+              .desc.col Тип документа (его название и загружаемое расширение например в pdf)
               .col
                 .upload-input-type2
                   .label
@@ -99,7 +105,7 @@ block content
                     i.base-icon-cross
                   .button-style4.variant2 Загрузить
             .document-item.row
-              .desc.col Тип документа (его название и загружаемое расширение например в pdf) 
+              .desc.col Тип документа (его название и загружаемое расширение например в pdf)
               .col
                 .upload-input-type2
                   .label.uploaded
@@ -107,7 +113,7 @@ block content
                     i.base-icon-cross
                   .button-style4.yellow На проверке
             .document-item.row
-              .desc.col Тип документа (его название и загружаемое расширение например в pdf) 
+              .desc.col Тип документа (его название и загружаемое расширение например в pdf)
               .col
                 .upload-input-type2
                   .label.uploaded
@@ -115,13 +121,13 @@ block content
                     i.base-icon-cross
                   .button-style4.gray Загружено
             .document-item.row
-              .desc.col Тип документа (его название и загружаемое расширение например в pdf) 
+              .desc.col Тип документа (его название и загружаемое расширение например в pdf)
               .col
                 .upload-input-type2.fall-down
                   .button-style4.red Сбой загрузки
                   .button-style4.variant2 Загрузить
             .document-item.row
-              .desc.col Тип документа (его название и загружаемое расширение например в pdf) 
+              .desc.col Тип документа (его название и загружаемое расширение например в pdf)
               .col
                 .upload-input-type2
                   .label.uploaded
@@ -129,7 +135,7 @@ block content
                     i.base-icon-cross
                   .button-style4.red Отклонено
             .document-item.row
-              .desc.col Тип документа (его название и загружаемое расширение например в pdf) 
+              .desc.col Тип документа (его название и загружаемое расширение например в pdf)
               .col
                 .upload-input-type2
                   .label.uploaded

@@ -1,12 +1,12 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  -
+    var
       title = 'Главная',
-      logged = false; 
+      logged = false;
 
-block content 
+block content
   main.main-container
     .container
       .page-top
@@ -17,7 +17,7 @@ block content
         .order-total-info
           span Текущий заказ:
           strong 105 924 ₽
-          a(href="#") оформить 
+          a(href="#") оформить
       .heading-block
         h1.h.h4 Заявка на регистрацию
       .tabs-block
@@ -38,9 +38,12 @@ block content
                         option Парикмахер
                         option Парикмахер
                         option Парикмахер
+                  .col-12.col-sm-6
+                    .input-row
+                      label Телефон
+                      input.style1(type='tel')
                   -
                     var array = [
-                      {h: 'Телефон', c: 'col-sm-6'},
                       {h: 'Фамилия *', c: 'col-sm-6'},
                       {h: 'Имя *', c: 'col-sm-6'},
                       {h: 'Отчество', c: 'col-sm-6'},
@@ -56,7 +59,7 @@ block content
                   .col-12.col-sm-6
                     .upload-input
                       .c
-                        .l Загрузить паспорт 
+                        .l Загрузить паспорт
                         .s 1 страница
                       label
                         input(type="file")
@@ -79,8 +82,8 @@ block content
                     .input-box
                       input(type="checkbox" id="lic" checked)
                       label(for="lic")
-                        span 
-                          | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с 
+                        span
+                          | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с
                           a(href="#") Условиями
                   .buttons.col-12.col-sm-6
                     .button
@@ -100,9 +103,12 @@ block content
                         option Парикмахер
                         option Парикмахер
                         option Парикмахер
+                  .col-12.col-sm-6
+                    .input-row
+                      label Телефон
+                      input.style1(type='tel')
                   -
                     var array = [
-                      {h: 'Телефон', c: 'col-sm-6'},
                       {h: 'Фамилия *', c: 'col-sm-6'},
                       {h: 'Название компании', c: 'col-sm-6'},
                       {h: 'Имя *', c: 'col-sm-6'},
@@ -120,7 +126,7 @@ block content
                   .col-12.col-sm-6
                     .upload-input
                       .c
-                        .l Загрузить паспорт 
+                        .l Загрузить паспорт
                         .s 1 страница
                       label
                         input(type="file")
@@ -143,8 +149,8 @@ block content
                     .input-box
                       input(type="checkbox" id="lic2" checked)
                       label(for="lic2")
-                        span 
-                          | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с 
+                        span
+                          | Я подтверждаю свою дееспособность, даю согласие на обработку своих персональных данных в соответствии с
                           a(href="#") Условиями
                   .buttons.col-12.col-sm-6
                     .button

@@ -470,7 +470,7 @@ jQuery(document).ready(function () {
 
     var $about_slider = jQuery('.about-slider');
 
-    $about_slider_swiper = new Swiper($about_slider.find('.swiper-container'), {
+    var $about_slider_swiper = new Swiper($about_slider.find('.swiper-container'), {
         loop: true,
         slidesPerView: 1,
         navigation: {
@@ -609,4 +609,12 @@ jQuery(document).ready(function () {
         });
     };
     tabscostume('tabs');
+
+
+
+    // phone mask
+
+    $("input[type='tel']").attr("pattern", "[+]7[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask({
+        mask: '+7(999)999-99-99'
+    });
 });
