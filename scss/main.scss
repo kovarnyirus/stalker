@@ -5437,13 +5437,9 @@ ol.style1 {
       height: 40px;
 
       span {
+        display: block;
         font-weight: normal;
         color: #000;
-        &.name {
-          display: block;
-          color: $accent;
-          font-weight: bold;
-        }
       }
 
       i {

@@ -622,12 +622,4 @@ jQuery(document).ready(function () {
         $('.sale-win').toggleClass('sale-win--open')
     })
 
-    jQuery('.dropdown--pay .item').on('click', function (e) {
-        let value = e.currentTarget.textContent;
-        let valuePercent = e.currentTarget.getAttribute("data-val");
-        let currentName = $('.select--pay .cur .name');
-        let currentPercent = $('.select--pay .cur .percent__number');
-        currentName.text(value);
-        currentPercent.text(valuePercent);
-    })
 });
