@@ -12544,3 +12544,16 @@ ol.style1 li:before {
 .sale-win .scroll-wrapper {
   overflow: hidden !important;
 }
+
+.check-price-popup .popup-wrap .h {
+  margin-bottom: 35px;
+  font-size: 15px;
+  line-height: 130%;
+}
+
+@media (min-width: 576px) {
+  .check-price-popup .popup-wrap .h {
+    font-size: 20px;
+    line-height: 130%;
+  }
+}

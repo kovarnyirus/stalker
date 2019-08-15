@@ -18,7 +18,7 @@ block content
   // Для того что бы отобразить форму, к "popup-block" добавить класс "show-popup"
 
   // Форма Авторизации
-  .auth-popup-form.popup-block.show-popup
+  .auth-popup-form.popup-block
     .popup-overlay
     form.popup-wrap
       .close.base-icon-cross
@@ -104,3 +104,31 @@ block content
       .close.base-icon-cross
       h5.h Сейчас проходит обучение:
       .text-t2 Описание курса который проходит в данный момент и что можно сделать чтобы в нем поучавствовать
+
+  // Форма уточнить цену
+  .check-price-popup.popup-block.show-popup
+    .popup-overlay
+    .popup-wrap
+      .close.base-icon-cross
+      h5.h Уточните цену у Вашего
+        br/ менеджера по телефонам:
+      .footer-col
+        .contact-rows
+          .contact-row
+            .l Служба клиентов (г. Москва)
+            .v
+              a(href="tel: 84957390780") 8 (495) 739 07 80
+              span  доб. 127
+          .contact-row
+            .l Служба клиентов (Московская Область)
+            .v
+              a(href="tel: 84957390780") 8 (495) 739 07 80
+              span  доб. 436, 464, 219, 129, 106, 529
+          .contact-row
+            .l Служба клиентов (Регионы)
+            .v
+              a(href="tel: 84957390780") 8 (495) 739 07 80
+              span  доб. 124, 102
+
+
+  //

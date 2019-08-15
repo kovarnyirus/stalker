@@ -6639,3 +6639,15 @@ ol.style1 {
     overflow: hidden!important;
   }
 }
+
+.check-price-popup{
+  & .popup-wrap .h {
+    margin-bottom: 35px;
+    font-size: 15px;
+    line-height: 130%;
+    @include media-breakpoint-up(sm){
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+}
