@@ -617,4 +617,8 @@ jQuery(document).ready(function () {
     $("input[type='tel']").attr("pattern", "[+]7[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask({
         mask: '+7(999)999-99-99'
     });
+
+    jQuery('.sale-block .sale').on('click', function (e) {
+        $('.sale-win').toggleClass('sale-win--open')
+    })
 });
