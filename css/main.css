@@ -8921,13 +8921,33 @@ ol.style1 li:before {
 }
 
 .order-totals .total--footer {
-  text-align: right;
+  text-align: left;
   margin-bottom: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .order-totals .total--footer strong {
   min-width: 60px;
   display: inline-block;
+  text-align: right;
+  margin-left: 35px;
+}
+
+@media (min-width: 576px) {
+  .order-totals .total--footer {
+    display: block;
+    text-align: right;
+  }
 }
 
 @media (max-width: 991.98px) {
