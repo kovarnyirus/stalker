@@ -11126,9 +11126,14 @@ ol.style1 li:before {
 }
 
 .select-pay-block .select .cur span {
-  display: block;
   font-weight: normal;
   color: #000;
+}
+
+.select-pay-block .select .cur span.name {
+  display: block;
+  color: #2394E6;
+  font-weight: bold;
 }
 
 .select-pay-block .select .cur i {

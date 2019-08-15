@@ -1,12 +1,12 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  -
+    var
       title = 'Личный кабинет',
-      logged = true; 
+      logged = true;
 
-block content 
+block content
   main.main-container
     .container
       .page-top
@@ -17,7 +17,7 @@ block content
         .order-total-info
           span Текущий заказ:
           strong 105 924  ₽
-          a(href="#") оформить 
+          a(href="#") оформить
       .heading-block
         h1.h.h4 Личный кабинет
       .content-block-with-sidebar.row
@@ -51,15 +51,18 @@ block content
             h5.h Текущий заказ
             .select-pay-block
               .label Способ оплаты
-              .select
-                .cur Сбербанк онлайн
-                  span 5% наценка
+              .select.select--pay
+                .cur
+                  span.name Сбербанк онлайн
+                  span.percents
+                    span.percent__number 5
+                    | % наценка
                   i.base-icon-down
-                .dropdown
-                  .item Сбербанк онлайн
-                  .item Сбербанк онлайн
-                  .item Сбербанк онлайн
-                  .item Сбербанк онлайн
+                .dropdown.dropdown--pay
+                  .item(data-val= '1') Сбербанк онлаин
+                  .item(data-val= '2') Почта
+                  .item(data-val= '3') Вариант
+                  .item(data-val= '4') Чек
           .cart-table.flex-table
             .flex-table-head
               .ct-num.flex-table-th №
@@ -90,7 +93,7 @@ block content
                     a(href="#").base-icon-cross
           .order-totals
             .bonus-size
-              span Всего баллов: 
+              span Всего баллов:
               | 756
             .total
               | итого:
