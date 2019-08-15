@@ -3358,6 +3358,15 @@ ol.style1 {
     }
   }
 
+  & .total--footer{
+    text-align: right;
+    margin-bottom: 15px;
+    & strong{
+      min-width: 60px;
+      display: inline-block;
+    }
+  }
+
   @include media-breakpoint-down(md) {
     flex-direction: column;
     align-items: flex-start;
@@ -3370,6 +3379,7 @@ ol.style1 {
         margin-left: 5px;
       }
     }
+
   }
 }
 

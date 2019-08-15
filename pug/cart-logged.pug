@@ -53,7 +53,7 @@ block content
               .label Способ оплаты
               .select
                 .cur Сбербанк онлайн
-                  //span 5% наценка
+                  span 5% наценка
                   i.base-icon-down
                 .dropdown
                   .item Сбербанк онлайн
@@ -89,12 +89,21 @@ block content
                   .ct-remove.flex-table-td
                     a(href="#").base-icon-cross
           .order-totals
-            .bonus-size
-              span Всего баллов:
-              | 756
-            .total
-              | итого:
-              strong 122 256 р
+            .d-flex.justify-content-between.w-100
+              .col-auto
+                .bonus-size
+                  span Всего баллов:
+                  | 756
+              .col-aut.pr-0
+                .total.total--footer
+                  | Сумма заказа:
+                  strong 122 256 р
+                .total.total--footer
+                  | Использовано балов:
+                  strong  256 р
+                .total.total--footer
+                  | Итого к оплате:
+                  strong 122 256 р
           .order-form-fields
             .bonus-input
               label.label-style1 Списать баллы

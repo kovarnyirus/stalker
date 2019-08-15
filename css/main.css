@@ -8920,6 +8920,16 @@ ol.style1 li:before {
   margin-left: 35px;
 }
 
+.order-totals .total--footer {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.order-totals .total--footer strong {
+  min-width: 60px;
+  display: inline-block;
+}
+
 @media (max-width: 991.98px) {
   .order-totals {
     -webkit-box-orient: vertical;
