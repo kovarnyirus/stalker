@@ -1,12 +1,12 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  -
+    var
       title = 'Спасибо за заказ',
-      logged = true; 
+      logged = true;
 
-block content 
+block content
   main.main-container
     .container
       .page-top
@@ -17,12 +17,67 @@ block content
         .order-total-info
           span Текущий заказ:
           strong 105 924  ₽
-          a(href="#") оформить 
+          a(href="#") оформить
       .heading-block
         h1.h.h4 Спасибо за заказ
-      .order-detail-block
+      .order-detail-block.mb-0
         .order-number
           .label Ваш номер заказа
           .value №727727
-        a(href="#").button-style3.variant2 Оплатить
-        a(href="#").button-style3.variant2 Скачать счет на оплату
+      .row
+        .col-12
+          .cart-table.flex-table
+            .flex-table-head
+              .ct-num.flex-table-th №
+              .ct-sku.flex-table-th Артикул
+              .ct-name.flex-table-th Наименование
+              .ct-count.flex-table-th Кол-во
+              .ct-total.flex-table-th Итого
+              .ct-remove.flex-table-th
+            .flex-table-body
+              - n = 0;
+              while n < 4
+                -n++;
+                .flex-table-row
+                  .ct-num.flex-table-td= n
+                  .ct-sku.flex-table-td 7293720414018
+                  .ct-name.flex-table-td
+                    a(href="#")
+                      span.img(style="background-image: url(images/prod-thumb.jpg)")
+                      span.title Blond кондиционер для осветленных волос 250 мл
+                  .ct-count.flex-table-td
+                    .quantity-block
+                      .b.minus.base-icon-minus
+                      input.input(type="number" value="1" min="1" max="10")
+                      .b.plus.base-icon-plus
+                  .ct-price.flex-table-td 1 256 р
+                  .ct-total.flex-table-td 122 256 р
+                  .ct-remove.flex-table-td
+                    a(href="#").base-icon-cross
+          .order-totals
+            .row.justify-content-between.w-100
+              .col-12.col-sm-auto
+                .bonus-size
+                  span Всего баллов:
+                  | 756
+              .col-12.col-sm-auto.pr-0
+                .total.total--footer
+                  | Сумма заказа:
+                  strong 122 256 р
+                .total.total--footer
+                  | Использовано балов:
+                  strong  256 р
+                .total.total--footer
+                  | Итого к оплате:
+                  strong 122 256 р
+      .row
+        .col-12.col-sm-6
+          .order-detail-block
+            .link-wrapper
+              a.link(href='#') Перейти в каталог
+            .link-wrapper
+              a.link(href='#') Архив заказов
+        .col-12.col-sm-6
+          .order-detail-block.justify-content-end
+            a(href="#").button-style3.variant2 Оплатить
+            a(href="#").button-style3.variant2 Скачать счет на оплату

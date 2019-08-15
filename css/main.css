@@ -8430,8 +8430,24 @@ ol.style1 li:before {
           flex-wrap: wrap;
 }
 
-.order-detail-block > *:not(:last-child) {
-  margin-right: 30px;
+@media (max-width: 767.98px) {
+  .order-detail-block {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.order-detail-block > *:not(:first-child) {
+  margin-left: 10px;
+}
+
+@media (min-width: 1200px) {
+  .order-detail-block > *:not(:last-child) {
+    margin-right: 30px;
+  }
+  .order-detail-block > *:not(:first-child) {
+    margin-left: 0;
+  }
 }
 
 .order-detail-block .order-number {
@@ -8447,6 +8463,22 @@ ol.style1 li:before {
   .order-detail-block .order-number {
     width: 100%;
   }
+}
+
+.order-detail-block .link-wrapper {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.order-detail-block .link-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.order-detail-block .link {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 130%;
+  color: #2394E5;
 }
 
 /*
