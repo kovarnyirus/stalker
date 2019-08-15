@@ -11122,7 +11122,6 @@ ol.style1 li:before {
   font-weight: bold;
   font-size: 12px;
   cursor: pointer;
-  height: 40px;
 }
 
 .select-pay-block .select .cur span {
@@ -11147,6 +11146,8 @@ ol.style1 li:before {
 .select-pay-block .dropdown .item {
   padding: 5px 14px;
   cursor: pointer;
+  color: #333333;
+  display: block;
 }
 
 .select-pay-block .dropdown .item:hover {
