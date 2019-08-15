@@ -11169,8 +11169,9 @@ ol.style1 li:before {
 }
 
 .select-pay-block .dropdown {
-  max-width: 200px;
+  max-width: 180px;
   text-transform: none;
+  width: 100%;
 }
 
 .select-pay-block .dropdown .item {
