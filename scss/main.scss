@@ -5841,7 +5841,7 @@ ol.style1 {
 */
 
 .contact-block {
-  font-weight: bold;
+  //font-weight: bold;
   font-size: 15px;
   margin-bottom: 20px;
 
@@ -5851,6 +5851,9 @@ ol.style1 {
     &:hover {
       color: $accent;
     }
+  }
+  .city{
+    color: #828282;
   }
 }
 

@@ -551,7 +551,7 @@ jQuery(document).ready(function () {
 
   if(jQuery('#map').length > 0) {
     function initialize() {
-      var myLatlng = new google.maps.LatLng(55.89122, 37.420746);
+      var myLatlng = new google.maps.LatLng(55.9843346, 37.2133595);
       var mapOptions = {
         zoom: 16,
         center: myLatlng,
@@ -561,7 +561,7 @@ jQuery(document).ready(function () {
       }
       var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-      var myLatLng = new google.maps.LatLng(55.89122, 37.420746);
+      var myLatLng = new google.maps.LatLng(55.9843346, 37.2133595);
       var beachMarker = new google.maps.Marker({
         position: myLatLng,
         map: map,
@@ -621,5 +621,7 @@ jQuery(document).ready(function () {
     jQuery('.sale-block .sale').on('click', function (e) {
         $('.sale-win').toggleClass('sale-win--open')
     })
+
+
 
 });

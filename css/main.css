@@ -11585,7 +11585,6 @@ ol.style1 li:before {
 - Contact Block
 */
 .contact-block {
-  font-weight: bold;
   font-size: 15px;
   margin-bottom: 20px;
 }
@@ -11596,6 +11595,10 @@ ol.style1 li:before {
 
 .contact-block a[href^="tel:"]:hover {
   color: #2394E6;
+}
+
+.contact-block .city {
+  color: #828282;
 }
 
 /*
