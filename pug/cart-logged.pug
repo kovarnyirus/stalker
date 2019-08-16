@@ -90,10 +90,15 @@ block content
                     a(href="#").base-icon-cross
           .order-totals
             .row.justify-content-between.w-100
-              .col-12.col-sm-auto
+              .col-12.col-sm-auto.pl-md-0.d-flex.flex-column.justify-content-between
                 .bonus-size
                   span Всего баллов:
                   | 756
+                .bonus-input.mb-0
+                  label.label-style1 Списать баллы
+                    span.bonus-input__input-wrap
+                      input.style1(type="text")
+                      button.button-style3.bonus-input__btn Ok
               .col-12.col-sm-auto.pr-0
                 .total.total--footer
                   | Сумма заказа:
@@ -106,8 +111,6 @@ block content
                   strong 122 256 р
           .order-form-fields
             .bonus-input
-              label.label-style1 Списать баллы
-              input.style1(type="text")
               .rule Баллами можно списать не более 30% от суммы текущего заказа. Меньше 10 баллов применить нельзя
             .row
               .col-12.col-sm-10.col-md-7.col-lg-6

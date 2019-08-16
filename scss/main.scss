@@ -3361,6 +3361,7 @@ ol.style1 {
 .order-totals {
   @extend %flex;
   margin: 40px 0;
+  margin-bottom: 17px;
 
   .cart-table+& {
     margin-top: -15px;
@@ -3432,7 +3433,7 @@ ol.style1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-bottom: 30px;
+  margin-bottom: 21px;
 
   label {
     flex: 1 0 100%;
@@ -3448,8 +3449,27 @@ ol.style1 {
     flex: 1;
     color: #828282;
     line-height: 17px;
-    max-width: 365px;
     margin-bottom: 10px;
+  }
+
+  &__input-wrap{
+    display: flex;
+    position: relative;
+    max-width: 296px;
+    & input {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+  }
+  &__btn{
+    margin-left: -4px;
+    background: #2394E5;
+    padding-left: 13px;
+    padding-right: 13px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
   }
 
   @include media-breakpoint-down(xs) {

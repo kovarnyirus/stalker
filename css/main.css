@@ -8927,6 +8927,7 @@ ol.style1 li:before {
 */
 .order-totals {
   margin: 40px 0;
+  margin-bottom: 17px;
 }
 
 .cart-table + .order-totals {
@@ -9018,7 +9019,7 @@ ol.style1 li:before {
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  margin-bottom: 30px;
+  margin-bottom: 21px;
 }
 
 .bonus-input label {
@@ -9044,8 +9045,32 @@ ol.style1 li:before {
           flex: 1;
   color: #828282;
   line-height: 17px;
-  max-width: 365px;
   margin-bottom: 10px;
+}
+
+.bonus-input__input-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  max-width: 296px;
+}
+
+.bonus-input__input-wrap input {
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+.bonus-input__btn {
+  margin-left: -4px;
+  background: #2394E5;
+  padding-left: 13px;
+  padding-right: 13px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 130%;
 }
 
 @media (max-width: 575.98px) {
