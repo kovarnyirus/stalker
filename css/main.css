@@ -9065,12 +9065,16 @@ ol.style1 li:before {
 .bonus-input__btn {
   margin-left: -6px;
   background: #2394E5;
-  padding-left: 13px;
-  padding-right: 13px;
   text-align: center;
   font-weight: bold;
   font-size: 18px;
   line-height: 130%;
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  width: 48px;
+  min-width: 48px;
+  max-width: 48px;
 }
 
 @media (max-width: 575.98px) {
